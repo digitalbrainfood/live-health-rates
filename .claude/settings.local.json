@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run build:*)",
+      "Bash(npm install:*)",
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\nAdd Live Health Rates health insurance website\n\n- Add homepage with hero section, testimonials, and quote form\n- Create landing pages \\(/landing, /landing-quote\\) with lead generation forms\n- Add quote flow with multi-step form wizard\n- Create static pages \\(privacy, terms, contact, do-not-sell, thank-you\\)\n- Add responsive header with sticky navigation and mobile call button\n- Implement testimonials with circular avatars\n- Add trust badges and partner logos\n- Configure mobile-first grid ordering for key sections\n- Add local images for health insurance content\n\n🤖 Generated with [Claude Code]\\(https://claude.com/claude-code\\)\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n\\)\")"
+    ]
+  }
+}
