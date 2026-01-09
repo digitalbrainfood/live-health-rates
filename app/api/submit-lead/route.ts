@@ -27,7 +27,6 @@ export async function POST(request: NextRequest) {
     }
 
     const ringbaToken = process.env.RINGBA_API_TOKEN;
-    const leadProsperApiKey = process.env.LEAD_PROSPER_API_KEY;
 
     const results = {
       ringba: { success: false, error: null as string | null },
@@ -78,46 +77,37 @@ export async function POST(request: NextRequest) {
     }
 
     // Submit to Lead Prosper API
-    if (leadProsperApiKey) {
-      try {
-        // Lead Prosper API endpoint
-        const leadProsperResponse = await fetch('https://api.leadprosper.io/ingest', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'X-API-Key': leadProsperApiKey,
-          },
-          body: JSON.stringify({
-            // Map fields to Lead Prosper's expected format
-            first_name: body.firstName,
-            last_name: body.lastName,
-            address: body.address,
-            city: body.city,
-            state: body.state,
-            zip: body.zipCode,
-            email: body.email,
-            phone: body.phone?.replace(/\D/g, ''),
-            household_income: body.householdIncome,
-            health_status: body.healthStatus,
-            dob: body.dob,
-            source: 'LiveHealthRates',
-            landing_page: request.headers.get('referer') || 'homepage',
-            ip_address: request.headers.get('x-forwarded-for') || request.headers.get('x-real-ip'),
-            user_agent: request.headers.get('user-agent'),
-            timestamp: new Date().toISOString(),
-          }),
-        });
+    try {
+      // Lead Prosper Direct Post API
+      const leadProsperResponse = await fetch('https://api.leadprosper.io/direct_post', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          // Required Lead Prosper fields
+          lp_campaign_id: '4576',
+          lp_supplier_id: '9357',
+          lp_key: 'v52s3lnu3n5',
+          lp_action: '', // empty for live, 'test' for testing
+          lp_subid1: request.headers.get('referer') || 'homepage',
+          lp_subid2: '',
+          // Lead data
+          fname: body.firstName || '',
+        }),
+      });
 
-        if (leadProsperResponse.ok) {
-          results.leadProsper.success = true;
-        } else {
-          results.leadProsper.error = await leadProsperResponse.text();
-          console.error('Lead Prosper API error:', results.leadProsper.error);
-        }
-      } catch (error) {
-        results.leadProsper.error = error instanceof Error ? error.message : 'Unknown error';
-        console.error('Lead Prosper submission error:', error);
+      const responseData = await leadProsperResponse.json();
+
+      if (responseData.status === 'ACCEPTED') {
+        results.leadProsper.success = true;
+      } else {
+        results.leadProsper.error = responseData.message || responseData.status;
+        console.error('Lead Prosper API error:', responseData);
       }
+    } catch (error) {
+      results.leadProsper.error = error instanceof Error ? error.message : 'Unknown error';
+      console.error('Lead Prosper submission error:', error);
     }
 
     // Return success if at least one submission worked, or if we have the basic data
