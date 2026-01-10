@@ -104,7 +104,7 @@ function LandingQuoteContent() {
     verificationCode: '',
   });
 
-  const totalSteps = 9;
+  const totalSteps = 8;
 
   // Set zip code from URL params on mount
   useEffect(() => {
@@ -116,7 +116,7 @@ function LandingQuoteContent() {
 
   // Quote expiry countdown for final step
   useEffect(() => {
-    if (currentStep === 9 && quoteExpiry > 0) {
+    if (currentStep === 8 && quoteExpiry > 0) {
       const timer = setInterval(() => {
         setQuoteExpiry(prev => prev - 1);
       }, 1000);
@@ -150,7 +150,6 @@ function LandingQuoteContent() {
       case 5: return formData.householdIncome !== '';
       case 6: return formData.age !== '';
       case 7: return formData.email.includes('@') && formData.phone.length >= 14 && formData.consent;
-      case 8: return formData.verificationCode.length === 4;
       default: return true;
     }
   };
@@ -159,7 +158,7 @@ function LandingQuoteContent() {
     if (!canProceed()) return;
 
     if (currentStep === 7) {
-      // Submit lead data before verification
+      // Submit lead data
       setIsSubmitting(true);
       try {
         await fetch('/api/submit-lead', {
@@ -187,10 +186,6 @@ function LandingQuoteContent() {
     }
   };
 
-  const handleResendCode = () => {
-    // Simulate resend code
-    alert('Verification code resent!');
-  };
 
   const progressPercentage = Math.round((currentStep / totalSteps) * 100);
 
@@ -232,7 +227,7 @@ function LandingQuoteContent() {
       {/* Main Content */}
       <div className="flex-1 flex flex-col">
         {/* Progress Bar */}
-        {currentStep < 9 && (
+        {currentStep < 8 && (
           <div className="max-w-2xl mx-auto w-full px-4 pt-8">
             <div className="flex items-center justify-between mb-2">
               <span className="text-sm text-gray-500">Step {currentStep} of {totalSteps}</span>
@@ -429,31 +424,8 @@ function LandingQuoteContent() {
               </div>
             )}
 
-            {/* Step 8: Verification Code */}
+            {/* Step 8: Quote Ready */}
             {currentStep === 8 && (
-              <div className="text-center">
-                <h1 className="text-2xl md:text-3xl font-bold text-[#1a365d] mb-2">
-                  Verification Code
-                </h1>
-                <p className="text-gray-600 mb-8">
-                  For security and privacy purpose please verify the 4 digit code sent to your cell phone.
-                </p>
-                <div className="max-w-sm mx-auto">
-                  <label className="block text-sm font-medium text-gray-700 mb-1 text-left">Enter code</label>
-                  <input
-                    type="text"
-                    value={formData.verificationCode}
-                    onChange={(e) => updateField('verificationCode', e.target.value.replace(/\D/g, '').slice(0, 4))}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#f97316] focus:border-transparent outline-none text-center text-xl tracking-widest"
-                    maxLength={4}
-                    placeholder="____"
-                  />
-                </div>
-              </div>
-            )}
-
-            {/* Step 9: Quote Ready */}
-            {currentStep === 9 && (
               <div className="text-center">
                 {/* Agent Status */}
                 <div className="bg-white rounded-xl shadow-md p-4 mb-6 flex items-center justify-between">
@@ -517,7 +489,7 @@ function LandingQuoteContent() {
             )}
 
             {/* Navigation Buttons */}
-            {currentStep < 9 && (
+            {currentStep < 8 && (
               <div className="mt-8 space-y-4 max-w-sm mx-auto">
                 <button
                   type="button"
@@ -525,34 +497,11 @@ function LandingQuoteContent() {
                   disabled={!canProceed() || isSubmitting}
                   className="w-full bg-[#f97316] text-white py-4 rounded-full font-semibold text-lg hover:bg-[#ea580c] transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
                 >
-                  {isSubmitting ? 'Processing...' : currentStep === 7 ? 'Find My Health Plan' : currentStep === 8 ? 'Submit' : 'Next'}
+                  {isSubmitting ? 'Processing...' : currentStep === 7 ? 'Find My Health Plan' : 'Next'}
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
                 </button>
-
-                {currentStep === 8 && (
-                  <button
-                    type="button"
-                    onClick={handleResendCode}
-                    className="w-full text-gray-600 py-2 font-medium hover:text-gray-800 transition-colors"
-                  >
-                    Resend Code
-                  </button>
-                )}
-
-                {currentStep === 8 && (
-                  <div className="text-center text-sm text-gray-600">
-                    Prefer to speak to a licensed health insurance agent by phone?
-                    <br />
-                    <a href="tel:877-688-4585" className="text-blue-600 hover:underline flex items-center justify-center gap-1 mt-1">
-                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                      </svg>
-                      877-688-4585
-                    </a>
-                  </div>
-                )}
 
                 {currentStep > 1 && (
                   <button
@@ -563,7 +512,7 @@ function LandingQuoteContent() {
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
                     </svg>
-                    {currentStep === 8 ? 'Go Back' : 'Back'}
+                    Back
                   </button>
                 )}
               </div>
