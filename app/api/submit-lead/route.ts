@@ -19,7 +19,11 @@ export async function POST(request: NextRequest) {
     const body: LeadData = await request.json();
     const { zipCode } = body;
 
+    console.log('=== LEAD SUBMISSION RECEIVED ===');
+    console.log('Body:', JSON.stringify(body));
+
     if (!zipCode || zipCode.length !== 5) {
+      console.log('Invalid zip code:', zipCode);
       return NextResponse.json(
         { error: 'Invalid zip code' },
         { status: 400 }
@@ -120,11 +124,14 @@ export async function POST(request: NextRequest) {
     // Return success if at least one submission worked, or if we have the basic data
     const anySuccess = results.ringba.success || results.leadProsper.success;
 
+    console.log('=== LEAD SUBMISSION COMPLETE ===');
+    console.log('Results:', JSON.stringify(results));
+
     return NextResponse.json({
       success: true, // Always return success to not block UX
       message: anySuccess ? 'Lead submitted successfully' : 'Lead received',
       phoneNumber: '833-741-1902',
-      results: process.env.NODE_ENV === 'development' ? results : undefined,
+      results, // Temporarily show results for debugging
     });
 
   } catch (error) {
