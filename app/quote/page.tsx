@@ -97,6 +97,7 @@ function QuoteFormContent() {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   // Refs for date inputs auto-focus
+  const dobMonthRef = useRef<HTMLInputElement>(null);
   const dobDayRef = useRef<HTMLInputElement>(null);
   const dobYearRef = useRef<HTMLInputElement>(null);
 
@@ -125,6 +126,13 @@ function QuoteFormContent() {
       setFormData(prev => ({ ...prev, zipCode: zip }));
     }
   }, [searchParams]);
+
+  // Auto-focus on date of birth month input when step 5 loads
+  useEffect(() => {
+    if (currentStep === 5) {
+      dobMonthRef.current?.focus();
+    }
+  }, [currentStep]);
 
   const totalSteps = 6;
 
@@ -374,6 +382,7 @@ function QuoteFormContent() {
                 <input
                   type="text"
                   placeholder="MM"
+                  ref={dobMonthRef}
                   value={formData.dobMonth}
                   onChange={(e) => {
                     const value = e.target.value.replace(/\D/g, '').slice(0, 2);
