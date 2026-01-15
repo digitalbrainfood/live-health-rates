@@ -414,9 +414,7 @@ function LandingQuoteContent() {
                       className="mt-1 w-4 h-4 rounded border-gray-300 text-[#f97316] focus:ring-[#f97316]"
                     />
                     <label htmlFor="consent" className="text-xs text-gray-600">
-                      By clicking the &quot;Get Quote&quot; button above, I am providing my ESIGN signature and express written consent to the Live Health Rates privacy policy and terms and conditions. I permit Live Health Rates and its{' '}
-                      <Link href="/partners" className="text-blue-600 underline">partners</Link>{' '}
-                      to contact me by email, text message, pre-recorded message, AI, or automated telephone technology on a recorded line for marketing purposes, even if my phone number is on any national or state &quot;Do Not Call&quot; list. Consent is not a condition of purchase. Message and data rates may apply. You may revoke your express consent at any time by emailing{' '}
+                      By clicking the &quot;Get Quote&quot; button above, I am providing my ESIGN signature and express written consent to the Live Health Rates privacy policy and terms and conditions. I permit Live Health Rates and its partners to contact me by email, text message, pre-recorded message, AI, or automated telephone technology on a recorded line for marketing purposes, even if my phone number is on any national or state &quot;Do Not Call&quot; list. Consent is not a condition of purchase. Message and data rates may apply. You may revoke your express consent at any time by emailing{' '}
                       <a href="mailto:info@livehealthrates.com" className="text-blue-600 underline">info@livehealthrates.com</a>
                     </label>
                   </div>

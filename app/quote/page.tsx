@@ -482,9 +482,7 @@ function QuoteFormContent() {
                     className="mt-1 w-5 h-5 rounded border-gray-300 text-[#f97316] focus:ring-[#f97316]"
                   />
                   <label htmlFor="marketingConsent" className="text-sm text-gray-600">
-                    By clicking &ldquo;Submit,&rdquo; you agree that Live Health Rates and its marketing partners listed in our{' '}
-                    <Link href="/partners" className="text-blue-600 hover:underline">Partner List</Link>{' '}
-                    may call, text, or send pre-recorded messages to the number you provide, including through an autodialer or AI technology, with offers about products and services—even if your number is on a state or national &ldquo;Do Not Call&rdquo; list. You also confirm that you have read and agree to our{' '}
+                    By clicking &ldquo;Submit,&rdquo; you agree that Live Health Rates and its marketing partners may call, text, or send pre-recorded messages to the number you provide, including through an autodialer or AI technology, with offers about products and services—even if your number is on a state or national &ldquo;Do Not Call&rdquo; list. You also confirm that you have read and agree to our{' '}
                     <Link href="/terms" className="text-blue-600 hover:underline">Terms of Use</Link>{' '}
                     and{' '}
                     <Link href="/privacy" className="text-blue-600 hover:underline">Privacy Policy</Link>. Message and data rates may apply, and your consent is not a condition of purchase.
