@@ -45,54 +45,66 @@ export async function POST(request: NextRequest) {
         enrichUrl.searchParams.set('email', body.email || '');
         enrichUrl.searchParams.set('source', 'livehealthrates.com');
 
+        console.log('Ringba URL:', enrichUrl.toString());
+
         const ringbaResponse = await fetch(enrichUrl.toString(), {
           method: 'GET',
         });
 
+        const ringbaResponseText = await ringbaResponse.text();
+        console.log('Ringba response status:', ringbaResponse.status);
+        console.log('Ringba response:', ringbaResponseText);
+
         if (ringbaResponse.ok) {
           results.ringba.success = true;
         } else {
-          results.ringba.error = await ringbaResponse.text();
+          results.ringba.error = ringbaResponseText;
           console.error('Ringba API error:', results.ringba.error);
         }
       } catch (error) {
         results.ringba.error = error instanceof Error ? error.message : 'Unknown error';
         console.error('Ringba submission error:', error);
       }
+    } else {
+      console.log('No phone number provided, skipping Ringba');
     }
 
     // Submit to Lead Prosper API
     try {
-      // Lead Prosper Direct Post API
+      const leadProsperPayload = {
+        // Required Lead Prosper fields
+        lp_campaign_id: '4576',
+        lp_supplier_id: '9357',
+        lp_key: 'v52s3lnu3n5',
+        lp_action: '', // empty for live, 'test' for testing
+        lp_subid1: request.headers.get('referer') || 'homepage',
+        lp_subid2: '',
+        // Lead data
+        fname: body.firstName || '',
+        lname: body.lastName || '',
+        email: body.email || '',
+        phone: body.phone?.replace(/\D/g, '') || '',
+        address: body.address || '',
+        city: body.city || '',
+        state: body.state || '',
+        zip: body.zipCode || '',
+        dob: body.dob || '',
+        income: body.householdIncome || '',
+        health_status: body.healthStatus || '',
+      };
+
+      console.log('Lead Prosper payload:', JSON.stringify(leadProsperPayload));
+
       const leadProsperResponse = await fetch('https://api.leadprosper.io/direct_post', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({
-          // Required Lead Prosper fields
-          lp_campaign_id: '4576',
-          lp_supplier_id: '9357',
-          lp_key: 'v52s3lnu3n5',
-          lp_action: '', // empty for live, 'test' for testing
-          lp_subid1: request.headers.get('referer') || 'homepage',
-          lp_subid2: '',
-          // Lead data
-          fname: body.firstName || '',
-          lname: body.lastName || '',
-          email: body.email || '',
-          phone: body.phone?.replace(/\D/g, '') || '',
-          address: body.address || '',
-          city: body.city || '',
-          state: body.state || '',
-          zip: body.zipCode || '',
-          dob: body.dob || '',
-          income: body.householdIncome || '',
-          health_status: body.healthStatus || '',
-        }),
+        body: JSON.stringify(leadProsperPayload),
       });
 
       const responseData = await leadProsperResponse.json();
+      console.log('Lead Prosper response:', JSON.stringify(responseData));
 
       if (responseData.status === 'ACCEPTED') {
         results.leadProsper.success = true;
