@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, Suspense } from 'react';
+import { useState, useEffect, useRef, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 
@@ -95,6 +95,11 @@ function QuoteFormContent() {
   const searchParams = useSearchParams();
   const [currentStep, setCurrentStep] = useState(1);
   const [isSubmitting, setIsSubmitting] = useState(false);
+
+  // Refs for date inputs auto-focus
+  const dobDayRef = useRef<HTMLInputElement>(null);
+  const dobYearRef = useRef<HTMLInputElement>(null);
+
   const [formData, setFormData] = useState<FormData>({
     firstName: '',
     lastName: '',
@@ -370,21 +375,35 @@ function QuoteFormContent() {
                   type="text"
                   placeholder="MM"
                   value={formData.dobMonth}
-                  onChange={(e) => updateField('dobMonth', e.target.value.replace(/\D/g, '').slice(0, 2))}
+                  onChange={(e) => {
+                    const value = e.target.value.replace(/\D/g, '').slice(0, 2);
+                    updateField('dobMonth', value);
+                    if (value.length === 2) {
+                      dobDayRef.current?.focus();
+                    }
+                  }}
                   className="w-24 px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#f97316] focus:border-transparent outline-none text-center"
                   maxLength={2}
                 />
                 <input
                   type="text"
                   placeholder="DD"
+                  ref={dobDayRef}
                   value={formData.dobDay}
-                  onChange={(e) => updateField('dobDay', e.target.value.replace(/\D/g, '').slice(0, 2))}
+                  onChange={(e) => {
+                    const value = e.target.value.replace(/\D/g, '').slice(0, 2);
+                    updateField('dobDay', value);
+                    if (value.length === 2) {
+                      dobYearRef.current?.focus();
+                    }
+                  }}
                   className="w-24 px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#f97316] focus:border-transparent outline-none text-center"
                   maxLength={2}
                 />
                 <input
                   type="text"
                   placeholder="YYYY"
+                  ref={dobYearRef}
                   value={formData.dobYear}
                   onChange={(e) => updateField('dobYear', e.target.value.replace(/\D/g, '').slice(0, 4))}
                   className="w-28 px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#f97316] focus:border-transparent outline-none text-center"
@@ -508,47 +527,6 @@ function QuoteFormContent() {
           </div>
         </div>
 
-        {/* Disclaimer Section */}
-        <div className="mt-8 border-t border-gray-200 pt-8">
-          <div className="text-xs text-gray-500 space-y-4">
-            <p>
-              Participating sales agencies represent Medicare Advantage (HMO, PPO and PFFS) organizations and stand-alone PDP prescription drug plans that are contracted with Medicare. Enrollment depends on the plan&apos;s contract renewal.
-            </p>
-            <p>
-              Enrollment in the described plan type may be limited to certain times of the year unless you qualify for a special enrollment period.
-            </p>
-            <p>
-              *Some plans may include a grocery benefit which helps cover the cost of groceries. This benefit is not universally available and may vary by plan and location. For more information on plans that offer a grocery benefit and to determine if you are eligible for such benefits, please consult with a licensed insurance agent.
-            </p>
-            <p>
-              We are not affiliated with any plan or endorsed by any government entity or agency. We connect individuals with insurance providers and other affiliates (collectively, &ldquo;Partners&rdquo;) to give you, the consumer, an opportunity to get insurance information and connect with licensed insurance agents. By completing the quote form or calling the number listed above, you will be directed to a Partner who can connect you to an appropriately licensed insurance agent who can answer your questions and discuss plan options.
-            </p>
-            <p>
-              Plans are insured or covered by a Medicare Advantage (HMO, HMO SNP, PPO, PPO SNP, and PFFS) organization with a Medicare contract and/or a By using this site, you acknowledge that you have read and agree to the Privacy Policy and Terms & Conditions.
-            </p>
-            <p>
-              To get a complete list of available plans, please contact 1-800-MEDICARE (TTY users should call 1-877-486-2048), 24 hours a day/7 days a week, or visit www.medicare.gov. All Medicare plans comply with applicable federal civil rights laws and do not discriminate based on race, color, nationality, age, disability, or sex. Some benefits may not be available in your state and plans and services may vary in your area. Medicare has not reviewed or endorsed this information.
-            </p>
-            <p className="text-gray-400">
-              SMID: MULTIPLAN_ELVCHPWEB2025
-            </p>
-          </div>
-
-          {/* Footer Links */}
-          <div className="mt-6 flex flex-wrap items-center justify-center gap-4 text-sm">
-            <Link href="/terms" className="text-blue-600 hover:underline">Terms and Condition</Link>
-            <span className="text-gray-300">|</span>
-            <Link href="/privacy" className="text-blue-600 hover:underline">Privacy Policy</Link>
-            <span className="text-gray-300">|</span>
-            <Link href="/contact" className="text-blue-600 hover:underline">Contact</Link>
-            <span className="text-gray-300">|</span>
-            <Link href="/do-not-sell" className="text-blue-600 hover:underline">Do Not Sell</Link>
-          </div>
-
-          <p className="mt-6 text-center text-sm text-gray-500">
-            © 2026 Live Health Rates - All rights reserved.
-          </p>
-        </div>
       </div>
     </div>
   );
