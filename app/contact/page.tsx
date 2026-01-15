@@ -127,8 +127,8 @@ export default function ContactPage() {
           </div>
           <div className="bg-gray-50 rounded-lg p-6">
             <h3 className="text-lg font-semibold text-[#1a365d] mb-2">Call Us</h3>
-            <a href="tel:833-312-4339" className="text-blue-600 hover:underline">
-              833-312-4339
+            <a href="tel:833-741-1902" className="text-blue-600 hover:underline">
+              833-741-1902
             </a>
           </div>
         </div>

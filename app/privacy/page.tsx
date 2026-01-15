@@ -11,7 +11,7 @@ export default function PrivacyPage() {
 
         <div className="prose prose-gray max-w-none space-y-8">
           <p className="text-gray-700 leading-relaxed">
-            Thank you for choosing to be part of our community at Mindstate Management LLC, doing business as Live Health Rates (&ldquo;Live Health Rates&rdquo;, &ldquo;we&rdquo;, &ldquo;us&rdquo;, &ldquo;our&rdquo;). We are committed to protecting your personal information and your right to privacy. If you have any questions or concerns about this privacy notice, or our practices with regards to your personal information, please contact us at <a href="mailto:info@livehealthrates.com" className="text-blue-600 hover:underline">info@livehealthrates.com</a>.
+            Thank you for choosing to be part of our community at Healthie LLC DBA Healthie Insurance Agency, doing business as Live Health Rates (&ldquo;Live Health Rates&rdquo;, &ldquo;we&rdquo;, &ldquo;us&rdquo;, &ldquo;our&rdquo;). We are committed to protecting your personal information and your right to privacy. If you have any questions or concerns about this privacy notice, or our practices with regards to your personal information, please contact us at <a href="mailto:info@livehealthrates.com" className="text-blue-600 hover:underline">info@livehealthrates.com</a>.
           </p>
           <p className="text-gray-700 leading-relaxed">
             When you visit our website https://livehealthrates.com (the &ldquo;Website&rdquo;), and more generally, use any of our services (the &ldquo;Services&rdquo;, which include the Website), we appreciate that you are trusting us with your personal information. We take your privacy very seriously. In this privacy notice, we seek to explain to you in the clearest way possible what information we collect, how we use it and what rights you have in relation to it. We hope you take some time to read through it carefully, as it is important. If there are any terms in this privacy notice that you do not agree with, please discontinue use of our Services immediately.
@@ -304,7 +304,7 @@ export default function PrivacyPage() {
               More information about our data collection and sharing practices can be found in this privacy notice.
             </p>
             <p className="text-gray-700 leading-relaxed mt-4">
-              You may contact us by email at info@livehealthrates.com, by calling toll-free at 888-410-2975, or by referring to the contact details at the bottom of this document.
+              You may contact us by email at info@livehealthrates.com, by calling toll-free at (833) 741-1902, or by referring to the contact details at the bottom of this document.
             </p>
             <p className="text-gray-700 leading-relaxed mt-4">
               If you are using an authorized agent to exercise your right to opt-out we may deny a request if the authorized agent does not submit proof that they have been validly authorized to act on your behalf.
@@ -344,7 +344,7 @@ export default function PrivacyPage() {
               If you have questions or comments about this notice, you may email us at <a href="mailto:info@livehealthrates.com" className="text-blue-600 hover:underline">info@livehealthrates.com</a> or by post to:
             </p>
             <p className="text-gray-700 leading-relaxed mt-4">
-              Mindstate Management LLC<br />
+              Healthie LLC DBA Healthie Insurance Agency<br />
               Live Health Rates<br />
               United States
             </p>

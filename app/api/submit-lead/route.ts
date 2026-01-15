@@ -26,42 +26,27 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const ringbaToken = process.env.RINGBA_API_TOKEN;
-
     const results = {
       ringba: { success: false, error: null as string | null },
       leadProsper: { success: false, error: null as string | null },
     };
 
-    // Submit to Ringba API
-    if (ringbaToken) {
+    // Submit to Ringba Enrich API
+    if (body.phone) {
       try {
-        const ringbaResponse = await fetch('https://api.ringba.com/v2/leads', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'Authorization': `Token ${ringbaToken}`,
-          },
-          body: JSON.stringify({
-            firstName: body.firstName,
-            lastName: body.lastName,
-            address: body.address,
-            city: body.city,
-            state: body.state,
-            zipCode: body.zipCode,
-            email: body.email,
-            phone: body.phone?.replace(/\D/g, ''),
-            householdIncome: body.householdIncome,
-            healthStatus: body.healthStatus,
-            dateOfBirth: body.dob,
-            source: 'website',
-            landingPage: request.headers.get('referer') || 'homepage',
-            timestamp: new Date().toISOString(),
-            metadata: {
-              userAgent: request.headers.get('user-agent'),
-              ip: request.headers.get('x-forwarded-for') || request.headers.get('x-real-ip'),
-            }
-          }),
+        const phoneNumber = body.phone.replace(/\D/g, '');
+        const e164Phone = phoneNumber.startsWith('1') ? `+${phoneNumber}` : `+1${phoneNumber}`;
+
+        const enrichUrl = new URL('https://display.ringba.com/enrich/2867709378390131869');
+        enrichUrl.searchParams.set('callerid', e164Phone);
+        enrichUrl.searchParams.set('firstName', body.firstName || '');
+        enrichUrl.searchParams.set('lastName', body.lastName || '');
+        enrichUrl.searchParams.set('zipCode', body.zipCode || '');
+        enrichUrl.searchParams.set('email', body.email || '');
+        enrichUrl.searchParams.set('source', 'livehealthrates.com');
+
+        const ringbaResponse = await fetch(enrichUrl.toString(), {
+          method: 'GET',
         });
 
         if (ringbaResponse.ok) {
@@ -116,7 +101,7 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({
       success: true, // Always return success to not block UX
       message: anySuccess ? 'Lead submitted successfully' : 'Lead received',
-      phoneNumber: '833-312-4339',
+      phoneNumber: '833-741-1902',
       results: process.env.NODE_ENV === 'development' ? results : undefined,
     });
 
@@ -127,7 +112,7 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({
       success: true,
       message: 'Lead received',
-      phoneNumber: '833-312-4339'
+      phoneNumber: '833-741-1902'
     });
   }
 }

@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import Image from 'next/image';
+import Link from 'next/link';
 
 export default function HeroSection() {
   const router = useRouter();
@@ -29,39 +29,41 @@ export default function HeroSection() {
   };
 
   return (
-    <section className="relative bg-gradient-to-br from-cyan-50 via-cyan-100 to-cyan-200 py-16 px-4">
+    <section className="bg-gradient-to-br from-[#FFFBEB] to-white py-12 md:py-16 px-4">
       <div className="max-w-7xl mx-auto">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left Content */}
           <div className="space-y-8 order-2 lg:order-1">
             <div>
-              <h1 className="text-4xl md:text-5xl font-bold text-[#1a365d] leading-tight">
-                Save Up to 80%
-                <br />
-                on Health Insurance
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#111827] leading-tight">
+                Your Journey to{' '}
+                <span className="text-[#EA580C]">Smarter Coverage</span>{' '}
+                Starts Here
               </h1>
-              <p className="mt-4 text-lg text-gray-700">
-                Get your customized quote now and see how much you could be saving.
+              <p className="mt-5 text-lg text-[#4B5563] leading-relaxed">
+                Connect with experienced insurance professionals who&apos;ll help you navigate your options and find coverage that aligns with your lifestyle and budget.
               </p>
             </div>
 
+            <Link
+              href="#quote-form"
+              className="inline-block bg-[#EA580C] text-white px-9 py-4 rounded-lg font-bold text-lg hover:bg-[#C2410C] hover:-translate-y-0.5 hover:shadow-xl transition-all"
+            >
+              Find Your Match
+            </Link>
+
             {/* Testimonial */}
-            <div className="bg-white/30 backdrop-blur-sm rounded-lg p-6">
-              <p className="text-gray-700 italic text-lg">
-                &ldquo;I was paying over $900 a month before. Now I have better coverage for less than $300.&rdquo;
+            <div className="bg-white rounded-2xl p-6 shadow-lg border-l-4 border-[#EA580C]">
+              <p className="text-[#4B5563] italic text-lg leading-relaxed">
+                &ldquo;I had no idea navigating insurance could be this straightforward. My agent explained everything in plain English and helped me make a confident choice.&rdquo;
               </p>
-              <div className="flex items-center gap-3 mt-4">
-                <div className="w-12 h-12 flex-shrink-0 relative">
-                  <Image
-                    src="/images/woman-buying-health-insurance.webp"
-                    alt="Lisa K"
-                    fill
-                    className="object-cover object-top rounded-full"
-                  />
+              <div className="flex items-center gap-4 mt-5">
+                <div className="w-12 h-12 flex-shrink-0 bg-[#FED7AA] rounded-full flex items-center justify-center font-bold text-[#78350F]">
+                  AW
                 </div>
                 <div>
-                  <p className="font-semibold text-[#1a365d]">Lisa K</p>
-                  <p className="text-sm text-gray-600">Graphic Designer</p>
+                  <p className="font-semibold text-[#111827]">Amanda W</p>
+                  <p className="text-sm text-[#4B5563]">UX Designer</p>
                 </div>
               </div>
             </div>
@@ -70,17 +72,16 @@ export default function HeroSection() {
           {/* Right Content - Quote Form */}
           <div id="quote-form" className="bg-white rounded-2xl shadow-xl p-8 order-1 lg:order-2">
             <div className="text-center mb-6">
-              <h2 className="text-2xl font-bold text-[#1a365d]">
-                Get a Quote for Health Insurance
-                <br />
-                Coverage in Under 5 Minutes
+              <h2 className="text-2xl font-bold text-[#111827]">
+                Start Your Coverage Search
               </h2>
+              <p className="text-[#4B5563] mt-2">Takes less than 60 seconds</p>
             </div>
 
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-5">
               <div>
-                <label htmlFor="zipCode" className="block text-sm font-medium text-gray-700 mb-2">
-                  Zip Code
+                <label htmlFor="zipCode" className="block text-sm font-semibold text-[#111827] mb-2">
+                  Enter Zip Code
                 </label>
                 <input
                   type="text"
@@ -88,8 +89,8 @@ export default function HeroSection() {
                   name="zipCode"
                   value={zipCode}
                   onChange={(e) => setZipCode(e.target.value.replace(/\D/g, '').slice(0, 5))}
-                  placeholder=""
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#f97316] focus:border-transparent outline-none transition-all"
+                  placeholder="12345"
+                  className="w-full px-4 py-4 border-2 border-gray-200 rounded-lg text-base focus:border-[#EA580C] transition-colors"
                   maxLength={5}
                   required
                   disabled={isSubmitting}
@@ -99,41 +100,32 @@ export default function HeroSection() {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-[#f97316] text-white py-4 rounded-lg font-semibold text-lg hover:bg-[#ea580c] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full bg-[#EA580C] text-white py-4 rounded-lg font-bold text-lg hover:bg-[#C2410C] hover:-translate-y-0.5 hover:shadow-xl transition-all disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                {isSubmitting ? 'Loading...' : 'Get Quote'}
+                {isSubmitting ? 'Loading...' : 'Connect With Agents'}
               </button>
             </form>
 
             {/* Trust Badges */}
-            <div className="flex items-center justify-center gap-6 mt-6 flex-wrap">
-              <div className="h-5 flex items-center">
-                <Image
-                  src="/images/review4u.svg"
-                  alt="Review4U"
-                  width={70}
-                  height={20}
-                  className="max-h-5 w-auto object-contain"
-                />
+            <div className="flex items-center justify-center gap-4 mt-5 flex-wrap">
+              <div className="px-3 py-1.5 bg-[#F9FAFB] rounded-md text-xs text-[#4B5563]">
+                Review4U ✓
               </div>
-              <div className="h-5 flex items-center">
-                <Image
-                  src="/images/mcafee.webp"
-                  alt="McAfee Secure"
-                  width={70}
-                  height={20}
-                  className="max-h-5 w-auto object-contain"
-                />
+              <div className="px-3 py-1.5 bg-[#F9FAFB] rounded-md text-xs text-[#4B5563]">
+                🔒 McAfee
               </div>
-              <div className="h-5 flex items-center">
-                <Image
-                  src="/images/ratingfox.svg"
-                  alt="RatingFox"
-                  width={70}
-                  height={20}
-                  className="max-h-5 w-auto object-contain"
-                />
+              <div className="px-3 py-1.5 bg-[#F9FAFB] rounded-md text-xs text-[#4B5563]">
+                RatingFox ⭐
               </div>
+            </div>
+
+            {/* Consent Text */}
+            <div className="mt-4 p-3 bg-[#F9FAFB] rounded-lg">
+              <p className="text-xs text-[#4B5563] leading-relaxed text-left">
+                Submitting this form means you&apos;re giving Live Health Rates and our partner network explicit permission to reach you via phone (including automated dialing), text, or email—even if you&apos;re on a Do Not Call list. Your details may be sold or shared with licensed insurance pros for marketing. See our{' '}
+                <Link href="/terms" className="text-[#2563EB] underline">Terms</Link> and{' '}
+                <Link href="/privacy" className="text-[#2563EB] underline">Privacy Policy</Link>. Standard messaging rates apply. No purchase necessary.
+              </p>
             </div>
           </div>
         </div>

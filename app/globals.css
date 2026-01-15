@@ -3,8 +3,16 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
-  --primary-blue: #1a365d;
-  --primary-orange: #f97316;
+  --primary: #EA580C;
+  --primary-hover: #C2410C;
+  --secondary: #2563EB;
+  --secondary-dark: #1E40AF;
+  --accent: #FED7AA;
+  --background-warm: #FFFBEB;
+  --dark: #78350F;
+  --gray-100: #F9FAFB;
+  --gray-600: #4B5563;
+  --gray-900: #111827;
 }
 
 @theme inline {

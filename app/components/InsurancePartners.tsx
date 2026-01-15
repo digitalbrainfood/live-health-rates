@@ -4,48 +4,56 @@ import Image from 'next/image';
 
 export default function InsurancePartners() {
   return (
-    <section className="bg-white py-12 px-4">
-      <div className="max-w-6xl mx-auto">
-        <p className="text-center text-gray-600 mb-8">
-          Health plans from multiple health insurance companies like:
-        </p>
+    <section className="bg-[#F9FAFB] py-12 px-4">
+      <div className="max-w-6xl mx-auto text-center">
+        <h3 className="text-[#4B5563] mb-8 text-base">
+          Our network connects you with agents representing carriers like:
+        </h3>
 
-        <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12">
+        <div className="flex flex-wrap items-center justify-center gap-10">
           {/* Allstate */}
-          <Image
-            src="/images/allstate.webp"
-            alt="Allstate Health Solutions"
-            width={120}
-            height={40}
-            className="h-10 w-auto object-contain"
-          />
+          <div className="w-[120px] h-[60px] bg-white rounded-lg shadow-sm flex items-center justify-center">
+            <Image
+              src="/images/allstate.webp"
+              alt="Allstate Health Solutions"
+              width={100}
+              height={40}
+              className="h-8 w-auto object-contain"
+            />
+          </div>
 
           {/* BlueCross BlueShield */}
-          <Image
-            src="/images/blue-cross-blue-shield.webp"
-            alt="BlueCross BlueShield"
-            width={120}
-            height={40}
-            className="h-10 w-auto object-contain"
-          />
+          <div className="w-[120px] h-[60px] bg-white rounded-lg shadow-sm flex items-center justify-center">
+            <Image
+              src="/images/blue-cross-blue-shield.webp"
+              alt="BlueCross BlueShield"
+              width={100}
+              height={40}
+              className="h-8 w-auto object-contain"
+            />
+          </div>
 
           {/* Cigna */}
-          <Image
-            src="/images/cigna.webp"
-            alt="Cigna"
-            width={120}
-            height={40}
-            className="h-10 w-auto object-contain"
-          />
+          <div className="w-[120px] h-[60px] bg-white rounded-lg shadow-sm flex items-center justify-center">
+            <Image
+              src="/images/cigna.webp"
+              alt="Cigna"
+              width={100}
+              height={40}
+              className="h-8 w-auto object-contain"
+            />
+          </div>
 
           {/* United Healthcare */}
-          <Image
-            src="/images/united-healthcare.webp"
-            alt="United Healthcare"
-            width={120}
-            height={40}
-            className="h-10 w-auto object-contain"
-          />
+          <div className="w-[120px] h-[60px] bg-white rounded-lg shadow-sm flex items-center justify-center">
+            <Image
+              src="/images/united-healthcare.webp"
+              alt="United Healthcare"
+              width={100}
+              height={40}
+              className="h-8 w-auto object-contain"
+            />
+          </div>
         </div>
       </div>
     </section>

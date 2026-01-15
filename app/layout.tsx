@@ -11,9 +11,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Live Health Rates - Save Up to 80% on Health Insurance",
-  description: "Get your customized health insurance quote now and see how much you could be saving. Plans from top insurance companies like BlueCross BlueShield, Cigna, and United Healthcare.",
-  keywords: "health insurance, affordable health plans, PPO networks, health coverage, insurance quotes",
+  title: "Live Health Rates - Your Path to Smarter Health Coverage",
+  description: "Connect with licensed insurance professionals who simplify your health coverage search. Find personalized options from top carriers—no jargon, no pressure, just real guidance.",
+  keywords: "health insurance, health coverage search, licensed insurance agents, PPO networks, affordable coverage, insurance quotes",
 };
 
 export default function RootLayout({
@@ -24,6 +24,29 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        {/* Meta Pixel Code */}
+        <Script id="meta-pixel" strategy="afterInteractive">
+          {`
+            !function(f,b,e,v,n,t,s)
+            {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+            n.queue=[];t=b.createElement(e);t.async=!0;
+            t.src=v;s=b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t,s)}(window, document,'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+            fbq('init', '4311816405805186');
+            fbq('track', 'PageView');
+          `}
+        </Script>
+        <noscript>
+          <img height="1" width="1" style={{ display: 'none' }}
+            src="https://www.facebook.com/tr?id=4311816405805186&ev=PageView&noscript=1"
+          />
+        </noscript>
+        {/* End Meta Pixel Code */}
+
+        {/* Google tag (gtag.js) */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=AW-17856739006"
           strategy="afterInteractive"
