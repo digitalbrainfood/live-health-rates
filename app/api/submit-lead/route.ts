@@ -79,6 +79,16 @@ export async function POST(request: NextRequest) {
           lp_subid2: '',
           // Lead data
           fname: body.firstName || '',
+          lname: body.lastName || '',
+          email: body.email || '',
+          phone: body.phone?.replace(/\D/g, '') || '',
+          address: body.address || '',
+          city: body.city || '',
+          state: body.state || '',
+          zip: body.zipCode || '',
+          dob: body.dob || '',
+          income: body.householdIncome || '',
+          health_status: body.healthStatus || '',
         }),
       });
 
