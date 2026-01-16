@@ -59,6 +59,12 @@ export default function RootLayout({
             gtag('config', 'AW-17856739006');
           `}
         </Script>
+
+        {/* Contentsquare */}
+        <Script
+          src="https://t.contentsquare.net/uxa/cc757dc8c5848.js"
+          strategy="afterInteractive"
+        />
       </head>
       <body className={`${inter.variable} font-sans antialiased`}>
         <Header />
