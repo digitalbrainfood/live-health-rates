@@ -30,16 +30,15 @@ export default function Header() {
       <header className="bg-white px-4 shadow-sm h-[60px] flex items-center sticky top-0 z-50">
         <div className="max-w-7xl mx-auto w-full flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-3">
+          <Link href="/" className="flex items-center">
             <Image
-              src="/images/live-health-rates.webp"
-              alt="Live Health Rates"
-              width={200}
-              height={60}
-              className="max-h-[60px] w-auto object-contain"
+              src="/images/health-coverage-search.png"
+              alt="Health Coverage Search"
+              width={180}
+              height={50}
+              className="max-h-[50px] w-auto object-contain"
               priority
             />
-            <span className="text-[#1a365d] font-bold text-lg hidden sm:inline">Live Health Rates</span>
           </Link>
 
           {/* Call Now */}
