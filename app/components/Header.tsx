@@ -29,7 +29,7 @@ export default function Header() {
           {/* Logo */}
           <Link href="/" className="flex items-center">
             <Image
-              src="/images/health-coverage-search.svg"
+              src="/images/health-coverage-search.png"
               alt="Health Coverage Search"
               width={180}
               height={50}
