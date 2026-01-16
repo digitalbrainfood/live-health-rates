@@ -30,7 +30,7 @@ export default function HeroSection() {
   };
 
   return (
-    <section className="relative bg-gradient-to-r from-[#e0f2fa] via-[#bde5f4] to-[#89CFF0] py-16 px-4">
+    <section className="relative bg-gradient-to-r from-[#e0f2fa] via-[#bde5f4] to-[#38b7e8] py-16 px-4">
       <div className="max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
