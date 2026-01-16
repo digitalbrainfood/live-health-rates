@@ -37,9 +37,9 @@ export default function HeroSection() {
           <div className="space-y-8 order-2 lg:order-1">
             <div>
               <h1 className="text-4xl md:text-5xl font-bold text-[#1a365d] leading-tight">
-                Your Journey to
+                Save Up to 77% on
                 <br />
-                <span className="text-[#f97316]">Smarter Coverage</span> Starts Here
+                <span className="text-[#f97316]">Health Insurance</span>
               </h1>
               <p className="mt-4 text-lg text-gray-700">
                 Connect with experienced insurance professionals who&apos;ll help you navigate your options and find coverage that aligns with your lifestyle and budget.
