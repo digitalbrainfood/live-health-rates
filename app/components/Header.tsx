@@ -11,10 +11,7 @@ export default function Header() {
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2">
           <div className="text-center sm:text-left">
             <p className="text-sm sm:text-base">
-              Coverage search available now through <strong>January 15, 2026</strong>.
-            </p>
-            <p className="text-sm sm:text-base">
-              See if you qualify for personalized options.
+              Health Coverage Search is available now through <strong>March 15, 2026</strong>. See if you qualify for personalized options.
             </p>
           </div>
           <Link
