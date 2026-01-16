@@ -198,8 +198,8 @@ export default function LandingPage() {
               </div>
             </div>
 
-            {/* Right Images */}
-            <div className="flex gap-4 justify-center">
+            {/* Right Images - Hidden on mobile */}
+            <div className="hidden lg:flex gap-4 justify-center">
               <div className="w-48 h-64 relative rounded-2xl overflow-hidden">
                 <Image
                   src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&h=600&fit=crop&crop=face"
