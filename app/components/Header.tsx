@@ -31,10 +31,11 @@ export default function Header() {
             <Image
               src="/images/health-coverage-search.webp"
               alt="Health Coverage Search"
-              width={180}
-              height={50}
-              className="max-h-[50px] w-auto object-contain"
+              width={360}
+              height={100}
+              className="h-[50px] w-auto object-contain"
               priority
+              unoptimized
             />
           </Link>
 
