@@ -45,7 +45,7 @@ export default function DoNotSellPage() {
     <div className="min-h-screen bg-white">
       <div className="max-w-2xl mx-auto px-4 py-12">
         <div className="text-center mb-8">
-          <h1 className="text-4xl font-bold text-[#1a365d] mb-2">Do Not Sell</h1>
+          <h1 className="text-4xl font-bold text-[#10385b] mb-2">Do Not Sell</h1>
           <p className="text-gray-600">My Personal Information</p>
         </div>
 

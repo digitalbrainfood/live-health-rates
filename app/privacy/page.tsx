@@ -6,7 +6,7 @@ export default function PrivacyPage() {
   return (
     <div className="min-h-screen bg-white">
       <div className="max-w-4xl mx-auto px-4 py-12">
-        <h1 className="text-4xl font-bold text-[#1a365d] mb-2">Privacy Policy</h1>
+        <h1 className="text-4xl font-bold text-[#10385b] mb-2">Privacy Policy</h1>
         <p className="text-gray-500 mb-8">Last updated July 25, 2025</p>
 
         <div className="prose prose-gray max-w-none space-y-8">
@@ -25,7 +25,7 @@ export default function PrivacyPage() {
 
           {/* Table of Contents */}
           <section>
-            <h2 className="text-2xl font-bold text-[#1a365d] mb-4">TABLE OF CONTENTS</h2>
+            <h2 className="text-2xl font-bold text-[#10385b] mb-4">TABLE OF CONTENTS</h2>
             <ol className="list-decimal pl-6 space-y-1 text-gray-700">
               <li><a href="#section1" className="text-blue-600 hover:underline">WHAT INFORMATION DO WE COLLECT?</a></li>
               <li><a href="#section2" className="text-blue-600 hover:underline">HOW DO WE USE YOUR INFORMATION?</a></li>
@@ -47,8 +47,8 @@ export default function PrivacyPage() {
 
           {/* Section 1 */}
           <section id="section1">
-            <h2 className="text-2xl font-bold text-[#1a365d] mb-4">1. WHAT INFORMATION DO WE COLLECT?</h2>
-            <h3 className="text-xl font-semibold text-[#1a365d] mb-3">Personal information you disclose to us</h3>
+            <h2 className="text-2xl font-bold text-[#10385b] mb-4">1. WHAT INFORMATION DO WE COLLECT?</h2>
+            <h3 className="text-xl font-semibold text-[#10385b] mb-3">Personal information you disclose to us</h3>
             <p className="text-gray-700 leading-relaxed italic">
               <strong>In Short:</strong> We collect personal information that you provide to us.
             </p>
@@ -65,7 +65,7 @@ export default function PrivacyPage() {
               All personal information that you provide to us must be true, complete and accurate, and you must notify us of any changes to such personal information.
             </p>
 
-            <h3 className="text-xl font-semibold text-[#1a365d] mb-3 mt-6">Information automatically collected</h3>
+            <h3 className="text-xl font-semibold text-[#10385b] mb-3 mt-6">Information automatically collected</h3>
             <p className="text-gray-700 leading-relaxed italic">
               <strong>In Short:</strong> Some information — such as your Internet Protocol (IP) address and/or browser and device characteristics — is collected automatically when you visit our Website.
             </p>
@@ -84,7 +84,7 @@ export default function PrivacyPage() {
               <li><strong>Location Data.</strong> We collect location data such as information about your device&apos;s location, which can be either precise or imprecise. How much information we collect depends on the type and settings of the device you use to access the Website. For example, we may use GPS and other technologies to collect geolocation data that tells us your current location (based on your IP address). You can opt out of allowing us to collect this information either by refusing access to the information or by disabling your Location setting on your device. Note however, if you choose to opt out, you may not be able to use certain aspects of the Services.</li>
             </ul>
 
-            <h3 className="text-xl font-semibold text-[#1a365d] mb-3 mt-6">Information collected from other sources</h3>
+            <h3 className="text-xl font-semibold text-[#10385b] mb-3 mt-6">Information collected from other sources</h3>
             <p className="text-gray-700 leading-relaxed italic">
               <strong>In Short:</strong> We may collect limited data from public databases, marketing partners, and other outside sources.
             </p>
@@ -95,7 +95,7 @@ export default function PrivacyPage() {
 
           {/* Section 2 */}
           <section id="section2">
-            <h2 className="text-2xl font-bold text-[#1a365d] mb-4">2. HOW DO WE USE YOUR INFORMATION?</h2>
+            <h2 className="text-2xl font-bold text-[#10385b] mb-4">2. HOW DO WE USE YOUR INFORMATION?</h2>
             <p className="text-gray-700 leading-relaxed italic">
               <strong>In Short:</strong> We process your information for purposes based on legitimate business interests, the fulfillment of our contract with you, compliance with our legal obligations, and/or your consent.
             </p>
@@ -123,7 +123,7 @@ export default function PrivacyPage() {
 
           {/* Section 3 */}
           <section id="section3">
-            <h2 className="text-2xl font-bold text-[#1a365d] mb-4">3. WILL YOUR INFORMATION BE SHARED WITH ANYONE?</h2>
+            <h2 className="text-2xl font-bold text-[#10385b] mb-4">3. WILL YOUR INFORMATION BE SHARED WITH ANYONE?</h2>
             <p className="text-gray-700 leading-relaxed italic">
               <strong>In Short:</strong> We only share information with your consent, to comply with laws, to provide you with services, to protect your rights, or to fulfill business obligations.
             </p>
@@ -150,7 +150,7 @@ export default function PrivacyPage() {
 
           {/* Section 4 */}
           <section id="section4">
-            <h2 className="text-2xl font-bold text-[#1a365d] mb-4">4. WHO WILL YOUR INFORMATION BE SHARED WITH?</h2>
+            <h2 className="text-2xl font-bold text-[#10385b] mb-4">4. WHO WILL YOUR INFORMATION BE SHARED WITH?</h2>
             <p className="text-gray-700 leading-relaxed italic">
               <strong>In Short:</strong> We only share information with the following third parties.
             </p>
@@ -170,7 +170,7 @@ export default function PrivacyPage() {
 
           {/* Section 5 */}
           <section id="section5">
-            <h2 className="text-2xl font-bold text-[#1a365d] mb-4">5. DO WE USE COOKIES AND OTHER TRACKING TECHNOLOGIES?</h2>
+            <h2 className="text-2xl font-bold text-[#10385b] mb-4">5. DO WE USE COOKIES AND OTHER TRACKING TECHNOLOGIES?</h2>
             <p className="text-gray-700 leading-relaxed italic">
               <strong>In Short:</strong> We may use cookies and other tracking technologies to collect and store your information.
             </p>
@@ -181,7 +181,7 @@ export default function PrivacyPage() {
 
           {/* Section 6 */}
           <section id="section6">
-            <h2 className="text-2xl font-bold text-[#1a365d] mb-4">6. DO WE USE GOOGLE MAPS PLATFORM APIS?</h2>
+            <h2 className="text-2xl font-bold text-[#10385b] mb-4">6. DO WE USE GOOGLE MAPS PLATFORM APIS?</h2>
             <p className="text-gray-700 leading-relaxed italic">
               <strong>In Short:</strong> Yes, we use Google Maps Platform APIs for the purpose of providing better service.
             </p>
@@ -192,7 +192,7 @@ export default function PrivacyPage() {
 
           {/* Section 7 */}
           <section id="section7">
-            <h2 className="text-2xl font-bold text-[#1a365d] mb-4">7. HOW LONG DO WE KEEP YOUR INFORMATION?</h2>
+            <h2 className="text-2xl font-bold text-[#10385b] mb-4">7. HOW LONG DO WE KEEP YOUR INFORMATION?</h2>
             <p className="text-gray-700 leading-relaxed italic">
               <strong>In Short:</strong> We keep your information for as long as necessary to fulfill the purposes outlined in this privacy notice unless otherwise required by law.
             </p>
@@ -206,7 +206,7 @@ export default function PrivacyPage() {
 
           {/* Section 8 */}
           <section id="section8">
-            <h2 className="text-2xl font-bold text-[#1a365d] mb-4">8. HOW DO WE KEEP YOUR INFORMATION SAFE?</h2>
+            <h2 className="text-2xl font-bold text-[#10385b] mb-4">8. HOW DO WE KEEP YOUR INFORMATION SAFE?</h2>
             <p className="text-gray-700 leading-relaxed italic">
               <strong>In Short:</strong> We aim to protect your personal information through a system of organizational and technical security measures.
             </p>
@@ -217,7 +217,7 @@ export default function PrivacyPage() {
 
           {/* Section 9 */}
           <section id="section9">
-            <h2 className="text-2xl font-bold text-[#1a365d] mb-4">9. DO WE COLLECT INFORMATION FROM MINORS?</h2>
+            <h2 className="text-2xl font-bold text-[#10385b] mb-4">9. DO WE COLLECT INFORMATION FROM MINORS?</h2>
             <p className="text-gray-700 leading-relaxed italic">
               <strong>In Short:</strong> We do not knowingly collect data from or market to children under 18 years of age.
             </p>
@@ -228,7 +228,7 @@ export default function PrivacyPage() {
 
           {/* Section 10 */}
           <section id="section10">
-            <h2 className="text-2xl font-bold text-[#1a365d] mb-4">10. WHAT ARE YOUR PRIVACY RIGHTS?</h2>
+            <h2 className="text-2xl font-bold text-[#10385b] mb-4">10. WHAT ARE YOUR PRIVACY RIGHTS?</h2>
             <p className="text-gray-700 leading-relaxed italic">
               <strong>In Short:</strong> You may review, change, or terminate your account at any time.
             </p>
@@ -242,7 +242,7 @@ export default function PrivacyPage() {
               If you have questions or comments about your privacy rights, you may email us at info@livehealthrates.com.
             </p>
 
-            <h3 className="text-xl font-semibold text-[#1a365d] mb-3 mt-6">Account Information</h3>
+            <h3 className="text-xl font-semibold text-[#10385b] mb-3 mt-6">Account Information</h3>
             <p className="text-gray-700 leading-relaxed">
               If you would at any time like to review or change the information in your account or terminate your account, you can:
             </p>
@@ -265,7 +265,7 @@ export default function PrivacyPage() {
 
           {/* Section 11 */}
           <section id="section11">
-            <h2 className="text-2xl font-bold text-[#1a365d] mb-4">11. CONTROLS FOR DO-NOT-TRACK FEATURES</h2>
+            <h2 className="text-2xl font-bold text-[#10385b] mb-4">11. CONTROLS FOR DO-NOT-TRACK FEATURES</h2>
             <p className="text-gray-700 leading-relaxed">
               Most web browsers and some mobile operating systems and mobile applications include a Do-Not-Track (&ldquo;DNT&rdquo;) feature or setting you can activate to signal your privacy preference not to have data about your online browsing activities monitored and collected. At this stage no uniform technology standard for recognizing and implementing DNT signals has been finalized. As such, we do not currently respond to DNT browser signals or any other mechanism that automatically communicates your choice not to be tracked online. If a standard for online tracking is adopted that we must follow in the future, we will inform you about that practice in a revised version of this privacy notice.
             </p>
@@ -273,7 +273,7 @@ export default function PrivacyPage() {
 
           {/* Section 12 */}
           <section id="section12">
-            <h2 className="text-2xl font-bold text-[#1a365d] mb-4">12. DO CALIFORNIA RESIDENTS HAVE SPECIFIC PRIVACY RIGHTS?</h2>
+            <h2 className="text-2xl font-bold text-[#10385b] mb-4">12. DO CALIFORNIA RESIDENTS HAVE SPECIFIC PRIVACY RIGHTS?</h2>
             <p className="text-gray-700 leading-relaxed italic">
               <strong>In Short:</strong> Yes, if you are a resident of California, you are granted specific rights regarding access to your personal information.
             </p>
@@ -284,7 +284,7 @@ export default function PrivacyPage() {
               If you are under 18 years of age, reside in California, and have a registered account with the Website, you have the right to request removal of unwanted data that you publicly post on the Website. To request removal of such data, please contact us using the contact information provided below, and include the email address associated with your account and a statement that you reside in California. We will make sure the data is not publicly displayed on the Website, but please be aware that the data may not be completely or comprehensively removed from all our systems (e.g. backups, etc.).
             </p>
 
-            <h3 className="text-xl font-semibold text-[#1a365d] mb-3 mt-6">CCPA Privacy Notice</h3>
+            <h3 className="text-xl font-semibold text-[#10385b] mb-3 mt-6">CCPA Privacy Notice</h3>
             <p className="text-gray-700 leading-relaxed">
               The California Code of Regulations defines a &ldquo;resident&rdquo; as:
             </p>
@@ -299,7 +299,7 @@ export default function PrivacyPage() {
               If this definition of &ldquo;resident&rdquo; applies to you, we must adhere to certain rights and obligations regarding your personal information.
             </p>
 
-            <h4 className="text-lg font-semibold text-[#1a365d] mb-3 mt-6">How do we use and share your personal information?</h4>
+            <h4 className="text-lg font-semibold text-[#10385b] mb-3 mt-6">How do we use and share your personal information?</h4>
             <p className="text-gray-700 leading-relaxed">
               More information about our data collection and sharing practices can be found in this privacy notice.
             </p>
@@ -310,7 +310,7 @@ export default function PrivacyPage() {
               If you are using an authorized agent to exercise your right to opt-out we may deny a request if the authorized agent does not submit proof that they have been validly authorized to act on your behalf.
             </p>
 
-            <h4 className="text-lg font-semibold text-[#1a365d] mb-3 mt-6">Will your information be shared with anyone else?</h4>
+            <h4 className="text-lg font-semibold text-[#10385b] mb-3 mt-6">Will your information be shared with anyone else?</h4>
             <p className="text-gray-700 leading-relaxed">
               We may disclose your personal information with our service providers pursuant to a written contract between us and each service provider. Each service provider is a for-profit entity that processes the information on our behalf.
             </p>
@@ -318,7 +318,7 @@ export default function PrivacyPage() {
               We may use your personal information for our own business purposes, such as for undertaking internal research for technological development and demonstration. This is not considered to be &ldquo;selling&rdquo; of your personal data.
             </p>
 
-            <h4 className="text-lg font-semibold text-[#1a365d] mb-3 mt-6">Your rights with respect to your personal data</h4>
+            <h4 className="text-lg font-semibold text-[#10385b] mb-3 mt-6">Your rights with respect to your personal data</h4>
             <ul className="list-disc pl-6 mt-2 space-y-2 text-gray-700">
               <li><strong>Right to request deletion of the data - Request to delete:</strong> You can ask for the deletion of your personal information. If you ask us to delete your personal information, we will respect your request and delete your personal information, subject to certain exceptions provided by law.</li>
               <li><strong>Right to be informed - Request to know:</strong> Depending on the circumstances, you have a right to know: whether we collect and use your personal information; the categories of personal information that we collect; the purposes for which the collected personal information is used; whether we sell your personal information to third parties; the categories of personal information that we sold or disclosed for a business purpose; the categories of third parties to whom the personal information was sold or disclosed for a business purpose; and the business or commercial purpose for collecting or selling personal information.</li>
@@ -328,7 +328,7 @@ export default function PrivacyPage() {
 
           {/* Section 13 */}
           <section id="section13">
-            <h2 className="text-2xl font-bold text-[#1a365d] mb-4">13. DO WE MAKE UPDATES TO THIS NOTICE?</h2>
+            <h2 className="text-2xl font-bold text-[#10385b] mb-4">13. DO WE MAKE UPDATES TO THIS NOTICE?</h2>
             <p className="text-gray-700 leading-relaxed italic">
               <strong>In Short:</strong> Yes, we will update this notice as necessary to stay compliant with relevant laws.
             </p>
@@ -339,7 +339,7 @@ export default function PrivacyPage() {
 
           {/* Section 14 */}
           <section id="section14">
-            <h2 className="text-2xl font-bold text-[#1a365d] mb-4">14. HOW CAN YOU CONTACT US ABOUT THIS NOTICE?</h2>
+            <h2 className="text-2xl font-bold text-[#10385b] mb-4">14. HOW CAN YOU CONTACT US ABOUT THIS NOTICE?</h2>
             <p className="text-gray-700 leading-relaxed">
               If you have questions or comments about this notice, you may email us at <a href="mailto:info@livehealthrates.com" className="text-blue-600 hover:underline">info@livehealthrates.com</a> or by post to:
             </p>
@@ -352,7 +352,7 @@ export default function PrivacyPage() {
 
           {/* Section 15 */}
           <section id="section15">
-            <h2 className="text-2xl font-bold text-[#1a365d] mb-4">15. HOW CAN YOU REVIEW, UPDATE OR DELETE THE DATA WE COLLECT FROM YOU?</h2>
+            <h2 className="text-2xl font-bold text-[#10385b] mb-4">15. HOW CAN YOU REVIEW, UPDATE OR DELETE THE DATA WE COLLECT FROM YOU?</h2>
             <p className="text-gray-700 leading-relaxed">
               Based on the applicable laws of your country, you may have the right to request access to the personal information we collect from you, change that information, or delete it in some circumstances. To request to review, update, or delete your personal information, please submit a request form by clicking here or contact us at <a href="mailto:info@livehealthrates.com" className="text-blue-600 hover:underline">info@livehealthrates.com</a>. We will respond to your request within 30 days.
             </p>

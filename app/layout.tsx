@@ -11,9 +11,49 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Live Health Rates - Your Path to Smarter Health Coverage",
+  metadataBase: new URL('https://healthcoveragesearch.com'),
+  title: {
+    default: "Health Coverage Search - Save Up to 77% on Health Insurance",
+    template: "%s | Health Coverage Search",
+  },
   description: "Connect with licensed insurance professionals who simplify your health coverage search. Find personalized options from top carriers—no jargon, no pressure, just real guidance.",
-  keywords: "health insurance, health coverage search, licensed insurance agents, PPO networks, affordable coverage, insurance quotes",
+  keywords: "health insurance, health coverage search, licensed insurance agents, PPO networks, affordable coverage, insurance quotes, ACA plans, marketplace insurance",
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    url: 'https://healthcoveragesearch.com',
+    siteName: 'Health Coverage Search',
+    title: 'Health Coverage Search - Save Up to 77% on Health Insurance',
+    description: 'Connect with licensed insurance professionals who simplify your health coverage search. Find personalized options from top carriers.',
+    images: [
+      {
+        url: '/images/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'Health Coverage Search',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Health Coverage Search - Save Up to 77% on Health Insurance',
+    description: 'Connect with licensed insurance professionals who simplify your health coverage search.',
+    images: ['/images/og-image.png'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  alternates: {
+    canonical: 'https://healthcoveragesearch.com',
+  },
 };
 
 export default function RootLayout({

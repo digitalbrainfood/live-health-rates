@@ -21,7 +21,7 @@ export default function Testimonials() {
   return (
     <section className="bg-white py-16 px-4">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold text-[#1a365d] mb-12">
+        <h2 className="text-3xl md:text-4xl font-bold text-[#10385b] mb-12">
           Stories From <span className="font-normal">Real People</span>
         </h2>
 
@@ -41,7 +41,7 @@ export default function Testimonials() {
                   />
                 </div>
                 <div>
-                  <p className="font-semibold text-[#1a365d]">{testimonial.name}</p>
+                  <p className="font-semibold text-[#10385b]">{testimonial.name}</p>
                   <p className="text-sm text-gray-600">{testimonial.title}</p>
                 </div>
               </div>

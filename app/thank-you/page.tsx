@@ -8,8 +8,8 @@ export default function ThankYouPage() {
       {/* Main Content */}
       <div className="flex-1 flex items-center justify-center px-4 py-12">
         <div className="max-w-2xl w-full text-center">
-          <h1 className="text-3xl md:text-4xl font-bold text-[#1a365d] mb-4">
-            Thank You for Inquiring with Live Health Rates
+          <h1 className="text-3xl md:text-4xl font-bold text-[#10385b] mb-4">
+            Thank You for Inquiring with Health Coverage Search
           </h1>
 
           <p className="text-lg text-gray-600 mb-8">

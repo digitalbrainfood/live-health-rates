@@ -36,7 +36,7 @@ export default function HeroSection() {
           {/* Left Content */}
           <div className="space-y-8 order-2 lg:order-1">
             <div>
-              <h1 className="text-4xl md:text-5xl font-bold text-[#1a365d] leading-tight">
+              <h1 className="text-4xl md:text-5xl font-bold text-[#10385b] leading-tight">
                 Save Up to 77% on
                 <br />
                 <span className="text-[#f97316]">Health Insurance</span>
@@ -61,7 +61,7 @@ export default function HeroSection() {
                   />
                 </div>
                 <div>
-                  <p className="font-semibold text-[#1a365d]">Amanda W</p>
+                  <p className="font-semibold text-[#10385b]">Amanda W</p>
                   <p className="text-sm text-gray-600">UX Designer</p>
                 </div>
               </div>
@@ -71,7 +71,7 @@ export default function HeroSection() {
           {/* Right Content - Quote Form */}
           <div id="quote-form" className="bg-white rounded-2xl shadow-xl p-8 order-1 lg:order-2">
             <div className="text-center mb-6">
-              <h2 className="text-2xl font-bold text-[#1a365d]">
+              <h2 className="text-2xl font-bold text-[#10385b]">
                 Start Your Coverage Search
               </h2>
               <p className="text-gray-600 mt-2">Takes less than 60 seconds</p>
@@ -139,7 +139,7 @@ export default function HeroSection() {
             {/* Consent Text */}
             <div className="mt-4 p-3 bg-gray-50 rounded-lg">
               <p className="text-xs text-gray-500 leading-relaxed text-left">
-                Submitting this form means you&apos;re giving Live Health Rates and our partner network explicit permission to reach you via phone (including automated dialing), text, or email—even if you&apos;re on a Do Not Call list. Your details may be sold or shared with licensed insurance pros for marketing. See our{' '}
+                Submitting this form means you&apos;re giving Health Coverage Search and our partner network explicit permission to reach you via phone (including automated dialing), text, or email—even if you&apos;re on a Do Not Call list. Your details may be sold or shared with licensed insurance pros for marketing. See our{' '}
                 <Link href="/terms" className="text-blue-600 underline">Terms</Link> and{' '}
                 <Link href="/privacy" className="text-blue-600 underline">Privacy Policy</Link>. Standard messaging rates apply. No purchase necessary.
               </p>

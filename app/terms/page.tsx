@@ -6,12 +6,12 @@ export default function TermsPage() {
   return (
     <div className="min-h-screen bg-white">
       <div className="max-w-4xl mx-auto px-4 py-12">
-        <h1 className="text-4xl font-bold text-[#1a365d] mb-2">Terms &amp; Conditions</h1>
+        <h1 className="text-4xl font-bold text-[#10385b] mb-2">Terms &amp; Conditions</h1>
         <p className="text-gray-500 mb-8">Last updated July 25, 2025</p>
 
         <div className="prose prose-gray max-w-none space-y-8">
           <section>
-            <h2 className="text-2xl font-bold text-[#1a365d] mb-4">General</h2>
+            <h2 className="text-2xl font-bold text-[#10385b] mb-4">General</h2>
             <p className="text-gray-700 leading-relaxed">
               This website (the &ldquo;Site&rdquo;) is owned and operated by Healthie LLC DBA Healthie Insurance Agency d/b/a &ldquo;Live Health Rates&rdquo; (&ldquo;COMPANY,&rdquo; &ldquo;we&rdquo; or &ldquo;us&rdquo;). By using the Site, you agree to be bound by these Terms of Service and to use the Site in accordance with these Terms of Service, our Privacy Policy and any additional terms and conditions that may apply to specific sections of the Site or to products and services available through the Site or from COMPANY. Accessing the Site, in any manner, whether automated or otherwise, constitutes use of the Site and your agreement to be bound by these Terms of Service.
             </p>
@@ -24,13 +24,13 @@ export default function TermsPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-[#1a365d] mb-4">Intellectual Property Rights</h2>
-            <h3 className="text-xl font-semibold text-[#1a365d] mb-3">Our Limited License to You</h3>
+            <h2 className="text-2xl font-bold text-[#10385b] mb-4">Intellectual Property Rights</h2>
+            <h3 className="text-xl font-semibold text-[#10385b] mb-3">Our Limited License to You</h3>
             <p className="text-gray-700 leading-relaxed">
               This Site and all the materials available on the Site are the property of us and/or our affiliates or licensors, and are protected by copyright, trademark, and other intellectual property laws. The Site is provided solely for your personal noncommercial use. You may not use the Site or the materials available on the Site in a manner that constitutes an infringement of our rights or that has not been authorized by us. More specifically, unless explicitly authorized in these Terms of Service or by the owner of the materials, you may not modify, copy, reproduce, republish, upload, post, transmit, translate, sell, create derivative works, exploit, or distribute in any manner or medium (including by email or other electronic means) any material from the Site. You may, however, from time to time, download and/or print one copy of individual pages of the Site for your personal, non-commercial use, provided that you keep intact all copyright and other proprietary notices.
             </p>
 
-            <h3 className="text-xl font-semibold text-[#1a365d] mb-3 mt-6">Your License to Us</h3>
+            <h3 className="text-xl font-semibold text-[#10385b] mb-3 mt-6">Your License to Us</h3>
             <p className="text-gray-700 leading-relaxed">
               By posting or submitting any material (including, without limitation, comments, blog entries, Facebook postings, photos and videos) to us via the Site, internet groups, social media venues, or to any of our staff via email, text or otherwise, you are representing: (i) that you are the owner of the material, or are making your posting or submission with the express consent of the owner of the material; and (ii) that you are thirteen years of age or older. In addition, when you submit, email, text or deliver or post any material, you are granting us, and anyone authorized by us, a royalty-free, perpetual, irrevocable, non-exclusive, unrestricted, worldwide license to use, copy, modify, transmit, sell, exploit, create derivative works from, distribute, and/or publicly perform or display such material, in whole or in part, in any manner or medium, now known or hereafter developed, for any purpose. The foregoing grant shall include the right to exploit any proprietary rights in such posting or submission, including, but not limited to, rights under copyright, trademark, service mark or patent laws under any relevant jurisdiction. Also, in connection with the exercise of such rights, you grant us, and anyone authorized by us, the right to identify you as the author of any of your postings or submissions by name, email address or screen name, as we deem appropriate.
             </p>
@@ -46,7 +46,7 @@ export default function TermsPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-[#1a365d] mb-4">Disclaimers</h2>
+            <h2 className="text-2xl font-bold text-[#10385b] mb-4">Disclaimers</h2>
             <p className="text-gray-700 leading-relaxed">
               Throughout the Site, we may provide links and pointers to Internet sites maintained by third parties. Our linking to such third-party sites does not imply an endorsement or sponsorship of such sites, or the information, products or services offered on or through the sites. In addition, neither we nor affiliates operate or control in any respect any information, products or services that third parties may provide on or through the Site or on websites linked to by us on the Site.
             </p>
@@ -65,7 +65,7 @@ export default function TermsPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-[#1a365d] mb-4">Online Commerce</h2>
+            <h2 className="text-2xl font-bold text-[#10385b] mb-4">Online Commerce</h2>
             <p className="text-gray-700 leading-relaxed">
               Certain sections of the Site may allow you to purchase many different types of products and services online that are provided by third parties. We are not responsible for the quality, accuracy, timeliness, reliability or any other aspect of these products and services. If you make a purchase from a merchant on the Site or on a site linked to by the Site, the information obtained during your visit to that merchant&apos;s online store or site, and the information that you give as part of the transaction, such as your credit card number and contact information, may be collected by both the merchant and us. A merchant may have privacy and data collection practices that are different from ours. We have no responsibility or liability for these independent policies. In addition, when you purchase products or services on or through the Site, you may be subject to additional terms and conditions that specifically apply to your purchase or use of such products or services. For more information regarding a merchant, its online store, its privacy policies, and/or any additional terms and conditions that may apply, visit that merchant&apos;s website and click on its information links or contact the merchant directly. You release us and our affiliates from any damages that you incur, and agree not to assert any claims against us or them, arising from your purchase or use of any products or services made available by third parties through the Site.
             </p>
@@ -84,7 +84,7 @@ export default function TermsPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-[#1a365d] mb-4">Interactive Features</h2>
+            <h2 className="text-2xl font-bold text-[#10385b] mb-4">Interactive Features</h2>
             <p className="text-gray-700 leading-relaxed">
               This Site may include a variety of features, such as bulletin boards, web logs, chat rooms, and email services, which allow feedback to us and real-time interaction between users, and other features which allow users to communicate with others. Responsibility for what is posted on bulletin boards, web logs, chat rooms, and other public posting areas on the Site, or sent via any email services on the Site, lies with each user – you alone are responsible for the material you post or send. We do not control the messages, information or files that you or others may provide through the Site. It is a condition of your use of the Site that you do not:
             </p>
@@ -114,21 +114,21 @@ export default function TermsPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-[#1a365d] mb-4">Registration</h2>
+            <h2 className="text-2xl font-bold text-[#10385b] mb-4">Registration</h2>
             <p className="text-gray-700 leading-relaxed">
               To access certain features of the Site, we may ask you to provide certain demographic information including your gender, year of birth, zip code and country. In addition, if you elect to sign-up for a particular feature of the Site, such as chat rooms, web logs, or bulletin boards, you may also be asked to register with us on the form provided and such registration may require you to provide personally identifiable information such as your name and email address. You agree to provide true, accurate, current and complete information about yourself as prompted by the Site&apos;s registration form. If we have reasonable grounds to suspect that such information is untrue, inaccurate, or incomplete, we have the right to suspend or terminate your account and refuse any and all current or future use of the Site (or any portion thereof). Our use of any personally identifiable information you provide to us as part of the registration process is governed by the terms of our Privacy Policy.
             </p>
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-[#1a365d] mb-4">Passwords</h2>
+            <h2 className="text-2xl font-bold text-[#10385b] mb-4">Passwords</h2>
             <p className="text-gray-700 leading-relaxed">
               To use certain features of the Site, you will need a username and password, which you will receive through the Site&apos;s registration process. You are responsible for maintaining the confidentiality of the password and account, and are responsible for all activities (whether by you or by others) that occur under your password or account. You agree to notify us immediately of any unauthorized use of your password or account or any other breach of security, and to ensure that you exit from your account at the end of each session. We cannot and will not be liable for any loss or damage arising from your failure to protect your password or account information.
             </p>
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-[#1a365d] mb-4">Limitation of Liability</h2>
+            <h2 className="text-2xl font-bold text-[#10385b] mb-4">Limitation of Liability</h2>
             <p className="text-gray-700 leading-relaxed uppercase font-medium">
               UNDER NO CIRCUMSTANCES, INCLUDING, BUT NOT LIMITED TO, NEGLIGENCE, SHALL WE, OUR SUBSIDIARY AND PARENT COMPANIES OR AFFILIATES BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL OR CONSEQUENTIAL DAMAGES THAT RESULT FROM THE USE OF, OR THE INABILITY TO USE, THE SITE, INCLUDING OUR MESSAGING, BLOGS, COMMENTS OF OTHERS, BOOKS, EMAILS, PRODUCTS, OR SERVICES, OR THIRD-PARTY MATERIALS, PRODUCTS, OR SERVICES MADE AVAILABLE THROUGH THE SITE OR BY US IN ANY WAY, EVEN IF WE ARE ADVISED BEFOREHAND OF THE POSSIBILITY OF SUCH DAMAGES. (BECAUSE SOME STATES DO NOT ALLOW THE EXCLUSION OR LIMITATION OF CERTAIN CATEGORIES OF DAMAGES, THE ABOVE LIMITATION MAY NOT APPLY TO YOU. IN SUCH STATES, OUR LIABILITY AND THE LIABILITY OF OUR SUBSIDIARY AND PARENT COMPANIES OR AFFILIATES IS LIMITED TO THE FULLEST EXTENT PERMITTED BY SUCH STATE LAW.) YOU SPECIFICALLY ACKNOWLEDGE AND AGREE THAT WE ARE NOT LIABLE FOR ANY DEFAMATORY, OFFENSIVE OR ILLEGAL CONDUCT OF ANY USER. IF YOU ARE DISSATISFIED WITH THE SITE, ANY MATERIALS, PRODUCTS, OR SERVICES ON THE SITE, OR WITH ANY OF THE SITE&apos;S TERMS AND CONDITIONS, YOUR SOLE AND EXCLUSIVE REMEDY IS TO DISCONTINUE USING THE SITE AND THE PRODUCTS, SERVICES AND/OR MATERIALS COMPANY IS NOT AN INVESTMENT ADVISORY SERVICE, IS NOT AN INVESTMENT ADVISER, AND DOES NOT PROVIDE PERSONALIZED FINANCIAL ADVICE OR ACT AS A FINANCIAL ADVISOR.
             </p>
@@ -144,21 +144,21 @@ export default function TermsPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-[#1a365d] mb-4">Termination</h2>
+            <h2 className="text-2xl font-bold text-[#10385b] mb-4">Termination</h2>
             <p className="text-gray-700 leading-relaxed">
               We may cancel or terminate your right to use the Site or any part of the Site at any time without notice. In the event of cancellation or termination, you are no longer authorized to access the part of the Site affected by such cancellation or termination. The restrictions imposed on you with respect to material downloaded from the Site, and the disclaimers and limitations of liabilities set forth in these Terms of Service, shall survive.
             </p>
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-[#1a365d] mb-4">Refund Policy</h2>
+            <h2 className="text-2xl font-bold text-[#10385b] mb-4">Refund Policy</h2>
             <p className="text-gray-700 leading-relaxed">
               Your purchase of a product or service or ticket to an event may or may not provide for any refund. Each specific product, service, event or course will specify its own refund policy.
             </p>
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-[#1a365d] mb-4">Other</h2>
+            <h2 className="text-2xl font-bold text-[#10385b] mb-4">Other</h2>
             <p className="text-gray-700 leading-relaxed">
               The Digital Millennium Copyright Act of 1998 (the &ldquo;DMCA&rdquo;) provides recourse for copyright owners who believe that material appearing on the Internet infringes their rights under the U.S. copyright law. If you believe in good faith that materials hosted by COMPANY infringe your copyright, you, or your agent may send to COMPANY a notice requesting that the material be removed or access to it be blocked. Any notification by a copyright owner or a person authorized to act on its behalf that fails to comply with requirements of the DMCA shall not be considered sufficient notice and shall not be deemed to confer upon COMPANY actual knowledge of facts or circumstances from which infringing material or acts are evident. If you believe in good faith that a notice of copyright infringement has been wrongly filed against you, the DMCA permits you to send to COMPANY a counter-notice. All notices and counter notices must meet the then current statutory requirements imposed by the DMCA; see http://www.loc.gov/copyright for details. COMPANY&apos;s Copyright Agent for notice of claims of copyright infringement or counter notices can be reached as follows: info@livehealthrates.com
             </p>
@@ -171,7 +171,7 @@ export default function TermsPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-[#1a365d] mb-4">Disclaimer</h2>
+            <h2 className="text-2xl font-bold text-[#10385b] mb-4">Disclaimer</h2>
             <p className="text-gray-700 leading-relaxed">
               Although it is highly unlikely, this policy may be changed at any time at our discretion. If we should update this policy, we will post the updates to this page on our Website.
             </p>

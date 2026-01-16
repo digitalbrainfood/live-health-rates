@@ -31,7 +31,7 @@ export default function WhyOurPlans() {
 
           {/* Content */}
           <div className="space-y-6 order-2 md:order-2">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#1a365d] italic">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#10385b] italic">
               What Makes This
               <br />
               Process Different

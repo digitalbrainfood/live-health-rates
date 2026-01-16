@@ -248,7 +248,7 @@ function LandingQuoteContent() {
             {/* Step 1: Purchase Timing */}
             {currentStep === 1 && (
               <div className="text-center">
-                <h1 className="text-2xl md:text-3xl font-bold text-[#1a365d] mb-8">
+                <h1 className="text-2xl md:text-3xl font-bold text-[#10385b] mb-8">
                   How soon are you considering to purchasing health insurance?
                 </h1>
                 <select
@@ -266,7 +266,7 @@ function LandingQuoteContent() {
             {/* Step 2: Current Coverage */}
             {currentStep === 2 && (
               <div className="text-center">
-                <h1 className="text-2xl md:text-3xl font-bold text-[#1a365d] mb-8">
+                <h1 className="text-2xl md:text-3xl font-bold text-[#10385b] mb-8">
                   What type of health insurance coverage do you currently have?
                 </h1>
                 <select
@@ -284,7 +284,7 @@ function LandingQuoteContent() {
             {/* Step 3: Full Name */}
             {currentStep === 3 && (
               <div className="text-center">
-                <h1 className="text-2xl md:text-3xl font-bold text-[#1a365d] mb-8">
+                <h1 className="text-2xl md:text-3xl font-bold text-[#10385b] mb-8">
                   What&apos;s your full name?
                 </h1>
                 <div className="space-y-4 max-w-sm mx-auto">
@@ -313,7 +313,7 @@ function LandingQuoteContent() {
             {/* Step 4: State and Zip */}
             {currentStep === 4 && (
               <div className="text-center">
-                <h1 className="text-2xl md:text-3xl font-bold text-[#1a365d] mb-8">
+                <h1 className="text-2xl md:text-3xl font-bold text-[#10385b] mb-8">
                   What&apos;s your state and zip code?
                 </h1>
                 <div className="grid grid-cols-2 gap-4 max-w-sm mx-auto">
@@ -346,7 +346,7 @@ function LandingQuoteContent() {
             {/* Step 5: Household Income */}
             {currentStep === 5 && (
               <div className="text-center">
-                <h1 className="text-2xl md:text-3xl font-bold text-[#1a365d] mb-8">
+                <h1 className="text-2xl md:text-3xl font-bold text-[#10385b] mb-8">
                   What&apos;s your household income?
                 </h1>
                 <select
@@ -364,7 +364,7 @@ function LandingQuoteContent() {
             {/* Step 6: Age */}
             {currentStep === 6 && (
               <div className="text-center">
-                <h1 className="text-2xl md:text-3xl font-bold text-[#1a365d] mb-8">
+                <h1 className="text-2xl md:text-3xl font-bold text-[#10385b] mb-8">
                   What&apos;s your age?
                 </h1>
                 <select
@@ -382,7 +382,7 @@ function LandingQuoteContent() {
             {/* Step 7: Contact Info */}
             {currentStep === 7 && (
               <div className="text-center">
-                <h1 className="text-2xl md:text-3xl font-bold text-[#1a365d] mb-8">
+                <h1 className="text-2xl md:text-3xl font-bold text-[#10385b] mb-8">
                   Thanks {formData.firstName}, your quote is ready!
                 </h1>
                 <div className="space-y-4 max-w-sm mx-auto">
@@ -449,7 +449,7 @@ function LandingQuoteContent() {
                   </div>
                 </div>
 
-                <h1 className="text-3xl md:text-4xl font-bold text-[#1a365d] mb-4">
+                <h1 className="text-3xl md:text-4xl font-bold text-[#10385b] mb-4">
                   Your Quote is Ready
                 </h1>
                 <p className="text-gray-600 mb-8">
@@ -458,7 +458,7 @@ function LandingQuoteContent() {
 
                 {/* Call Card */}
                 <div className="bg-gray-50 rounded-2xl p-8 mb-6">
-                  <p className="text-4xl font-bold text-[#1a365d] mb-4">877-831-1528</p>
+                  <p className="text-4xl font-bold text-[#10385b] mb-4">877-831-1528</p>
                   <a
                     href="tel:877-831-1528"
                     className="inline-flex items-center gap-2 bg-[#f97316] text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-[#ea580c] transition-colors"

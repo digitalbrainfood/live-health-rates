@@ -217,7 +217,7 @@ function QuoteFormContent() {
           {/* Step 1: Name */}
           {currentStep === 1 && (
             <div className="space-y-6">
-              <h1 className="text-2xl md:text-3xl font-bold text-[#1a365d] text-center">
+              <h1 className="text-2xl md:text-3xl font-bold text-[#10385b] text-center">
                 What&apos;s your full name?
               </h1>
 
@@ -254,7 +254,7 @@ function QuoteFormContent() {
           {/* Step 2: Address */}
           {currentStep === 2 && (
             <div className="space-y-6">
-              <h1 className="text-2xl md:text-3xl font-bold text-[#1a365d] text-center">
+              <h1 className="text-2xl md:text-3xl font-bold text-[#10385b] text-center">
                 What&apos;s your home address?
               </h1>
 
@@ -325,7 +325,7 @@ function QuoteFormContent() {
           {/* Step 3: Income */}
           {currentStep === 3 && (
             <div className="space-y-6">
-              <h1 className="text-2xl md:text-3xl font-bold text-[#1a365d] text-center">
+              <h1 className="text-2xl md:text-3xl font-bold text-[#10385b] text-center">
                 What&apos;s your household income?
               </h1>
 
@@ -349,7 +349,7 @@ function QuoteFormContent() {
           {/* Step 4: Health Status */}
           {currentStep === 4 && (
             <div className="space-y-6">
-              <h1 className="text-2xl md:text-3xl font-bold text-[#1a365d] text-center">
+              <h1 className="text-2xl md:text-3xl font-bold text-[#10385b] text-center">
                 Do You Consider Yourself:
               </h1>
 
@@ -375,7 +375,7 @@ function QuoteFormContent() {
           {/* Step 5: Date of Birth */}
           {currentStep === 5 && (
             <div className="space-y-6">
-              <h1 className="text-2xl md:text-3xl font-bold text-[#1a365d] text-center">
+              <h1 className="text-2xl md:text-3xl font-bold text-[#10385b] text-center">
                 What&apos;s your date of birth?
               </h1>
 
@@ -426,7 +426,7 @@ function QuoteFormContent() {
           {/* Step 6: Contact Info & Submit */}
           {currentStep === 6 && (
             <div className="space-y-6">
-              <h1 className="text-2xl md:text-3xl font-bold text-[#1a365d] text-center">
+              <h1 className="text-2xl md:text-3xl font-bold text-[#10385b] text-center">
                 Thanks {formData.firstName}, your quote is ready!
               </h1>
 

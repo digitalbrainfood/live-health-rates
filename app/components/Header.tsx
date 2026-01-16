@@ -7,7 +7,7 @@ export default function Header() {
   return (
     <>
       {/* Top Banner */}
-      <div className="bg-[#1a365d] text-white py-3 px-4">
+      <div className="bg-[#10385b] text-white py-3 px-4">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2">
           <div className="text-center sm:text-left">
             <p className="text-sm sm:text-base">
@@ -15,8 +15,8 @@ export default function Header() {
             </p>
           </div>
           <Link
-            href="#quote-form"
-            className="bg-white text-[#1a365d] px-6 py-2 rounded-full font-semibold text-sm hover:bg-gray-100 transition-colors whitespace-nowrap"
+            href="/aca"
+            className="bg-white text-[#10385b] px-6 py-2 rounded-full font-semibold text-sm hover:bg-gray-100 transition-colors whitespace-nowrap"
           >
             Check Eligibility
           </Link>

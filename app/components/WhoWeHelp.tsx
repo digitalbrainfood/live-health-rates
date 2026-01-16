@@ -25,20 +25,20 @@ export default function WhoWeHelp() {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Content */}
           <div className="space-y-8 order-2 md:order-1">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#1a365d]">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#10385b]">
               Who Thrives With Our Service
             </h2>
 
             <div className="space-y-6">
               {audiences.map((audience, index) => (
                 <div key={index} className="flex items-start gap-3">
-                  <div className="flex-shrink-0 w-6 h-6 bg-[#1a365d] rounded-full flex items-center justify-center mt-0.5">
+                  <div className="flex-shrink-0 w-6 h-6 bg-[#10385b] rounded-full flex items-center justify-center mt-0.5">
                     <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
                   </div>
                   <p className="text-gray-700">
-                    <span className="font-semibold text-[#1a365d]">{audience.title}</span>{' '}
+                    <span className="font-semibold text-[#10385b]">{audience.title}</span>{' '}
                     {audience.description}
                   </p>
                 </div>

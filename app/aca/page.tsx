@@ -7,15 +7,6 @@ import Link from 'next/link';
 
 export default function LandingPage() {
   const router = useRouter();
-  const [zipCode, setZipCode] = useState('');
-  const [agreeToTerms, setAgreeToTerms] = useState(false);
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (zipCode.length === 5 && agreeToTerms) {
-      router.push(`/quote?zip=${zipCode}`);
-    }
-  };
 
   // Reusable ZipCodeForm component for this page
   const ZipCodeForm = ({ variant = 'light' }: { variant?: 'light' | 'dark' }) => {
@@ -25,7 +16,7 @@ export default function LandingPage() {
     const handleLocalSubmit = (e: React.FormEvent) => {
       e.preventDefault();
       if (localZip.length === 5 && localAgree) {
-        router.push(`/landing-quote?zip=${localZip}`);
+        router.push(`/aca-quote?zip=${localZip}`);
       }
     };
 
@@ -38,7 +29,7 @@ export default function LandingPage() {
           <label className={`block text-sm font-medium ${textColor} mb-2`}>
             Enter your zip code
           </label>
-          <div className="flex gap-3">
+          <div className="flex flex-col sm:flex-row gap-3">
             <input
               type="text"
               value={localZip}
@@ -50,7 +41,7 @@ export default function LandingPage() {
             <button
               type="submit"
               disabled={localZip.length !== 5 || !localAgree}
-              className="bg-[#f97316] text-white px-8 py-3 rounded-lg font-semibold hover:bg-[#ea580c] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+              className="bg-[#f97316] text-white px-8 py-3 rounded-lg font-semibold hover:bg-[#ea580c] transition-colors disabled:opacity-50 disabled:cursor-not-allowed whitespace-nowrap"
             >
               Next
             </button>
@@ -67,7 +58,7 @@ export default function LandingPage() {
           />
           <label htmlFor={`terms-${variant}`} className={`text-xs ${textColor}`}>
             I agree to the <Link href="/privacy" className={linkColor}>Privacy Policy</Link> and{' '}
-            <Link href="/terms" className={linkColor}>Terms & Conditions</Link> of Live Health Rates. By providing my phone number, I consent to receive automated text messages from this business. Message and data rates may apply.
+            <Link href="/terms" className={linkColor}>Terms & Conditions</Link> of Health Coverage Search. By providing my phone number, I consent to receive automated text messages from this business. Message and data rates may apply.
           </label>
         </div>
 
@@ -106,20 +97,20 @@ export default function LandingPage() {
 
         {/* Content */}
         <div className="relative z-10 max-w-7xl mx-auto px-4 py-16 w-full">
-          <div className="max-w-xl min-w-[728px]">
-            <h1 className="text-[36px] text-white leading-tight mb-4">
+          <div className="max-w-xl w-full">
+            <h1 className="text-2xl sm:text-3xl md:text-[36px] text-white leading-tight mb-4">
               <span className="font-normal">Call Now to Find Out if You Qualify for</span>
               <br />
               <span className="font-bold">Health Insurance</span> for{' '}
               <span className="font-bold">$0 a Month</span>
             </h1>
-            <p className="text-[30px] text-white mb-8">
+            <p className="text-xl sm:text-2xl md:text-[30px] text-white mb-8">
               <span className="font-bold">Affordable Health Insurance</span>{' '}
               <span className="font-light">is Just a Click or Phone Call Away</span>
             </p>
 
             {/* Form */}
-            <div className="bg-transparent max-w-[500px]">
+            <div className="bg-transparent w-full max-w-[500px]">
               <ZipCodeForm variant="dark" />
             </div>
           </div>
@@ -130,7 +121,7 @@ export default function LandingPage() {
       <section className="py-16 px-4 bg-white">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#1a365d] mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#10385b] mb-4">
               How Our Platform Helps You
             </h2>
             <p className="text-gray-600 text-lg">
@@ -142,12 +133,12 @@ export default function LandingPage() {
             {/* Personalizing Your Options */}
             <div className="text-center">
               <div className="w-20 h-20 bg-blue-50 rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg className="w-10 h-10 text-[#1a365d]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-10 h-10 text-[#10385b]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                   <circle cx="18" cy="6" r="3" fill="#22c55e" stroke="#22c55e" />
                 </svg>
               </div>
-              <h3 className="text-xl font-bold text-[#1a365d] mb-2">
+              <h3 className="text-xl font-bold text-[#10385b] mb-2">
                 Personalizing Your Options
               </h3>
               <p className="text-gray-600">
@@ -158,11 +149,11 @@ export default function LandingPage() {
             {/* Comparing Plans Easily */}
             <div className="text-center">
               <div className="w-20 h-20 bg-blue-50 rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg className="w-10 h-10 text-[#1a365d]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-10 h-10 text-[#10385b]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                 </svg>
               </div>
-              <h3 className="text-xl font-bold text-[#1a365d] mb-2">
+              <h3 className="text-xl font-bold text-[#10385b] mb-2">
                 Comparing Plans Easily
               </h3>
               <p className="text-gray-600">
@@ -173,11 +164,11 @@ export default function LandingPage() {
             {/* Guiding Your Enrollment */}
             <div className="text-center">
               <div className="w-20 h-20 bg-blue-50 rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg className="w-10 h-10 text-[#1a365d]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-10 h-10 text-[#10385b]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 17V7m0 10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h2a2 2 0 012 2m0 10a2 2 0 002 2h2a2 2 0 002-2M9 7a2 2 0 012-2h2a2 2 0 012 2m0 10V7m0 10a2 2 0 002 2h2a2 2 0 002-2V7a2 2 0 00-2-2h-2a2 2 0 00-2 2" />
                 </svg>
               </div>
-              <h3 className="text-xl font-bold text-[#1a365d] mb-2">
+              <h3 className="text-xl font-bold text-[#10385b] mb-2">
                 Guiding Your Enrollment
               </h3>
               <p className="text-gray-600">
@@ -194,7 +185,7 @@ export default function LandingPage() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left Content */}
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-[#1a365d] mb-6">
+              <h2 className="text-3xl md:text-4xl font-bold text-[#10385b] mb-6">
                 Benefits of Choosing an ACA Plan
               </h2>
               <p className="text-gray-600 mb-8 leading-relaxed">
@@ -236,7 +227,7 @@ export default function LandingPage() {
           <div className="grid md:grid-cols-2 gap-6">
             {/* Coverage for Everyone */}
             <div className="bg-white rounded-xl p-8 shadow-sm">
-              <h3 className="text-xl font-bold text-[#1a365d] mb-4">
+              <h3 className="text-xl font-bold text-[#10385b] mb-4">
                 Coverage for Everyone
               </h3>
               <p className="text-gray-600 leading-relaxed">
@@ -246,7 +237,7 @@ export default function LandingPage() {
 
             {/* Start Exploring Your ACA Options Today */}
             <div className="bg-white rounded-xl p-8 shadow-sm">
-              <h3 className="text-xl font-bold text-[#1a365d] mb-4">
+              <h3 className="text-xl font-bold text-[#10385b] mb-4">
                 Start Exploring Your ACA Options Today
               </h3>
               <p className="text-gray-600 leading-relaxed">
@@ -256,7 +247,7 @@ export default function LandingPage() {
 
             {/* Why ACA Plans Are a Smart Choice */}
             <div className="bg-white rounded-xl p-8 shadow-sm">
-              <h3 className="text-xl font-bold text-[#1a365d] mb-4">
+              <h3 className="text-xl font-bold text-[#10385b] mb-4">
                 Why ACA Plans Are a Smart Choice
               </h3>
               <p className="text-gray-600 leading-relaxed">
@@ -266,7 +257,7 @@ export default function LandingPage() {
 
             {/* Open Enrollment and Special Enrollment */}
             <div className="bg-white rounded-xl p-8 shadow-sm">
-              <h3 className="text-xl font-bold text-[#1a365d] mb-4">
+              <h3 className="text-xl font-bold text-[#10385b] mb-4">
                 Open Enrollment and Special Enrollment
               </h3>
               <p className="text-gray-600 leading-relaxed">
@@ -278,7 +269,7 @@ export default function LandingPage() {
       </section>
 
       {/* We're Here to Help CTA */}
-      <section className="py-16 px-4 bg-[#0099ff]">
+      <section className="py-16 px-4 bg-[#38b7e8]">
         <div className="max-w-6xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left Content */}

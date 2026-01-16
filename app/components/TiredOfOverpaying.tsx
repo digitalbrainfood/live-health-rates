@@ -21,7 +21,7 @@ export default function TiredOfOverpaying() {
 
           {/* Content */}
           <div className="space-y-6">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#1a365d]">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#10385b]">
               Health Insurance Shouldn&apos;t Be This Confusing
             </h2>
 
@@ -30,7 +30,7 @@ export default function TiredOfOverpaying() {
             </p>
 
             <p className="text-gray-700 leading-relaxed">
-              High premiums. Complex jargon. Endless options. We simplify the entire process by pairing you with <span className="text-[#1a365d] font-semibold">knowledgeable agents who actually speak human</span> and genuinely want to help you succeed.
+              High premiums. Complex jargon. Endless options. We simplify the entire process by pairing you with <span className="text-[#10385b] font-semibold">knowledgeable agents who actually speak human</span> and genuinely want to help you succeed.
             </p>
 
             <Link

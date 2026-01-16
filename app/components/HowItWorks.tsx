@@ -27,7 +27,7 @@ export default function HowItWorks() {
   return (
     <section className="bg-gray-50 py-16 px-4">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold text-[#1a365d] mb-12">
+        <h2 className="text-3xl md:text-4xl font-bold text-[#10385b] mb-12">
           Your Simple Path Forward
         </h2>
 
@@ -37,7 +37,7 @@ export default function HowItWorks() {
               <p className="text-sm font-semibold text-gray-500 uppercase tracking-wide">
                 STEP {item.step}:
               </p>
-              <h3 className="text-xl font-bold text-[#1a365d]">
+              <h3 className="text-xl font-bold text-[#10385b]">
                 {item.title}
               </h3>
               <p className="text-gray-600">

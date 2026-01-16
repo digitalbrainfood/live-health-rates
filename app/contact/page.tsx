@@ -35,7 +35,7 @@ export default function ContactPage() {
     <div className="min-h-screen bg-white">
       <div className="max-w-2xl mx-auto px-4 py-12">
         <div className="text-center mb-8">
-          <h1 className="text-4xl font-bold text-[#1a365d] mb-2">Contact Us</h1>
+          <h1 className="text-4xl font-bold text-[#10385b] mb-2">Contact Us</h1>
           <p className="text-gray-600">We&apos;d love to hear from you. Send us a message and we&apos;ll respond as soon as possible.</p>
         </div>
 
@@ -120,13 +120,13 @@ export default function ContactPage() {
         {/* Contact Info */}
         <div className="mt-12 grid md:grid-cols-2 gap-8">
           <div className="bg-gray-50 rounded-lg p-6">
-            <h3 className="text-lg font-semibold text-[#1a365d] mb-2">Email Us</h3>
+            <h3 className="text-lg font-semibold text-[#10385b] mb-2">Email Us</h3>
             <a href="mailto:info@livehealthrates.com" className="text-blue-600 hover:underline">
               info@livehealthrates.com
             </a>
           </div>
           <div className="bg-gray-50 rounded-lg p-6">
-            <h3 className="text-lg font-semibold text-[#1a365d] mb-2">Call Us</h3>
+            <h3 className="text-lg font-semibold text-[#10385b] mb-2">Call Us</h3>
             <a href="tel:833-741-1902" className="text-blue-600 hover:underline">
               833-741-1902
             </a>
