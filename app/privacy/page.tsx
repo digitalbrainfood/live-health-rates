@@ -5,14 +5,14 @@ export default function PrivacyPage() {
     <div className="min-h-screen bg-white">
       <div className="max-w-4xl mx-auto px-4 py-12">
         <h1 className="text-4xl font-bold text-[#10385b] mb-2">Privacy Policy</h1>
-        <p className="text-gray-500 mb-8">Last updated July 25, 2025</p>
+        <p className="text-gray-500 mb-8">Last updated Oct 25, 2025</p>
 
         <div className="prose prose-gray max-w-none space-y-8">
           <p className="text-gray-700 leading-relaxed">
-            Thank you for choosing to be part of our community at Healthie LLC DBA Healthie Insurance Agency, doing business as Live Health Rates (&ldquo;Live Health Rates&rdquo;, &ldquo;we&rdquo;, &ldquo;us&rdquo;, &ldquo;our&rdquo;). We are committed to protecting your personal information and your right to privacy. If you have any questions or concerns about this privacy notice, or our practices with regards to your personal information, please contact us at <a href="mailto:info@livehealthrates.com" className="text-blue-600 hover:underline">info@livehealthrates.com</a>.
+            Thank you for choosing to be part of our community at Healthie LLC DBA Healthie Insurance Agency, doing business as Health Coverage Search (&ldquo;Health Coverage Search&rdquo;, &ldquo;we&rdquo;, &ldquo;us&rdquo;, &ldquo;our&rdquo;). We are committed to protecting your personal information and your right to privacy. If you have any questions or concerns about this privacy notice, or our practices with regards to your personal information, please contact us at <a href="mailto:contact@healthcoveragesearch.com" className="text-blue-600 hover:underline">contact@healthcoveragesearch.com</a>.
           </p>
           <p className="text-gray-700 leading-relaxed">
-            When you visit our website https://livehealthrates.com (the &ldquo;Website&rdquo;), and more generally, use any of our services (the &ldquo;Services&rdquo;, which include the Website), we appreciate that you are trusting us with your personal information. We take your privacy very seriously. In this privacy notice, we seek to explain to you in the clearest way possible what information we collect, how we use it and what rights you have in relation to it. We hope you take some time to read through it carefully, as it is important. If there are any terms in this privacy notice that you do not agree with, please discontinue use of our Services immediately.
+            When you visit our website https://healthcoveragesearch.com (the &ldquo;Website&rdquo;), and more generally, use any of our services (the &ldquo;Services&rdquo;, which include the Website), we appreciate that you are trusting us with your personal information. We take your privacy very seriously. In this privacy notice, we seek to explain to you in the clearest way possible what information we collect, how we use it and what rights you have in relation to it. We hope you take some time to read through it carefully, as it is important. If there are any terms in this privacy notice that you do not agree with, please discontinue use of our Services immediately.
           </p>
           <p className="text-gray-700 leading-relaxed">
             This privacy notice applies to all information collected through our Services (which, as described above, includes our Website), as well as, any related services, sales, marketing or events.
@@ -105,7 +105,7 @@ export default function PrivacyPage() {
             </p>
             <ul className="list-disc pl-6 mt-2 space-y-2 text-gray-700">
               <li><strong>To facilitate account creation and logon process.</strong> If you choose to link your account with us to a third-party account (such as your Google or Facebook account), we use the information you allowed us to collect from those third parties to facilitate account creation and logon process for the performance of the contract.</li>
-              <li><strong>To post testimonials.</strong> We post testimonials on our Website that may contain personal information. Prior to posting a testimonial, we will obtain your consent to use your name and the content of the testimonial. If you wish to update, or delete your testimonial, please contact us at info@livehealthrates.com and be sure to include your name, testimonial location, and contact information.</li>
+              <li><strong>To post testimonials.</strong> We post testimonials on our Website that may contain personal information. Prior to posting a testimonial, we will obtain your consent to use your name and the content of the testimonial. If you wish to update, or delete your testimonial, please contact us at contact@healthcoveragesearch.com and be sure to include your name, testimonial location, and contact information.</li>
               <li><strong>Request feedback.</strong> We may use your information to request feedback and to contact you about your use of our Website.</li>
               <li><strong>To enable user-to-user communications.</strong> We may use your information in order to enable user-to-user communications with each user&apos;s consent.</li>
               <li><strong>To manage user accounts.</strong> We may use your information for the purposes of managing our account and keeping it in working order.</li>
@@ -220,7 +220,7 @@ export default function PrivacyPage() {
               <strong>In Short:</strong> We do not knowingly collect data from or market to children under 18 years of age.
             </p>
             <p className="text-gray-700 leading-relaxed mt-4">
-              We do not knowingly solicit data from or market to children under 18 years of age. By using the Website, you represent that you are at least 18 or that you are the parent or guardian of such a minor and consent to such minor dependent&apos;s use of the Website. If we learn that personal information from users less than 18 years of age has been collected, we will deactivate the account and take reasonable measures to promptly delete such data from our records. If you become aware of any data we may have collected from children under age 18, please contact us at info@livehealthrates.com.
+              We do not knowingly solicit data from or market to children under 18 years of age. By using the Website, you represent that you are at least 18 or that you are the parent or guardian of such a minor and consent to such minor dependent&apos;s use of the Website. If we learn that personal information from users less than 18 years of age has been collected, we will deactivate the account and take reasonable measures to promptly delete such data from our records. If you become aware of any data we may have collected from children under age 18, please contact us at contact@healthcoveragesearch.com.
             </p>
           </section>
 
@@ -237,7 +237,7 @@ export default function PrivacyPage() {
               If you are a resident in Switzerland, the contact details for the data protection authorities are available here: https://www.edoeb.admin.ch/edoeb/en/home.html.
             </p>
             <p className="text-gray-700 leading-relaxed mt-4">
-              If you have questions or comments about your privacy rights, you may email us at info@livehealthrates.com.
+              If you have questions or comments about your privacy rights, you may email us at contact@healthcoveragesearch.com.
             </p>
 
             <h3 className="text-xl font-semibold text-[#10385b] mb-3 mt-6">Account Information</h3>
@@ -247,7 +247,7 @@ export default function PrivacyPage() {
             <ul className="list-disc pl-6 mt-2 space-y-2 text-gray-700">
               <li>Log in to your account settings and update your user account.</li>
               <li>Contact us using the contact information provided.</li>
-              <li>info@livehealthrates.com</li>
+              <li>contact@healthcoveragesearch.com</li>
             </ul>
             <p className="text-gray-700 leading-relaxed mt-4">
               Upon your request to terminate your account, we will deactivate or delete your account and information from our active databases. However, we may retain some information in our files to prevent fraud, troubleshoot problems, assist with any investigations, enforce our Terms of Use and/or comply with applicable legal requirements.
@@ -302,7 +302,7 @@ export default function PrivacyPage() {
               More information about our data collection and sharing practices can be found in this privacy notice.
             </p>
             <p className="text-gray-700 leading-relaxed mt-4">
-              You may contact us by email at info@livehealthrates.com, by calling toll-free at (833) 741-1902, or by referring to the contact details at the bottom of this document.
+              You may contact us by email at contact@healthcoveragesearch.com, by calling toll-free at (833) 588-1588, or by referring to the contact details at the bottom of this document.
             </p>
             <p className="text-gray-700 leading-relaxed mt-4">
               If you are using an authorized agent to exercise your right to opt-out we may deny a request if the authorized agent does not submit proof that they have been validly authorized to act on your behalf.
@@ -339,11 +339,11 @@ export default function PrivacyPage() {
           <section id="section14">
             <h2 className="text-2xl font-bold text-[#10385b] mb-4">14. HOW CAN YOU CONTACT US ABOUT THIS NOTICE?</h2>
             <p className="text-gray-700 leading-relaxed">
-              If you have questions or comments about this notice, you may email us at <a href="mailto:info@livehealthrates.com" className="text-blue-600 hover:underline">info@livehealthrates.com</a> or by post to:
+              If you have questions or comments about this notice, you may email us at <a href="mailto:contact@healthcoveragesearch.com" className="text-blue-600 hover:underline">contact@healthcoveragesearch.com</a> or by post to:
             </p>
             <p className="text-gray-700 leading-relaxed mt-4">
               Healthie LLC DBA Healthie Insurance Agency<br />
-              Live Health Rates<br />
+              Health Coverage Search<br />
               United States
             </p>
           </section>
@@ -352,7 +352,7 @@ export default function PrivacyPage() {
           <section id="section15">
             <h2 className="text-2xl font-bold text-[#10385b] mb-4">15. HOW CAN YOU REVIEW, UPDATE OR DELETE THE DATA WE COLLECT FROM YOU?</h2>
             <p className="text-gray-700 leading-relaxed">
-              Based on the applicable laws of your country, you may have the right to request access to the personal information we collect from you, change that information, or delete it in some circumstances. To request to review, update, or delete your personal information, please submit a request form by clicking here or contact us at <a href="mailto:info@livehealthrates.com" className="text-blue-600 hover:underline">info@livehealthrates.com</a>. We will respond to your request within 30 days.
+              Based on the applicable laws of your country, you may have the right to request access to the personal information we collect from you, change that information, or delete it in some circumstances. To request to review, update, or delete your personal information, please submit a request form by clicking here or contact us at <a href="mailto:contact@healthcoveragesearch.com" className="text-blue-600 hover:underline">contact@healthcoveragesearch.com</a>. We will respond to your request within 30 days.
             </p>
           </section>
         </div>
