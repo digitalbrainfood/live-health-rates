@@ -1,7 +1,5 @@
 'use client';
 
-import Link from 'next/link';
-
 export default function PrivacyPage() {
   return (
     <div className="min-h-screen bg-white">
@@ -359,21 +357,6 @@ export default function PrivacyPage() {
           </section>
         </div>
 
-        {/* Footer Links */}
-        <div className="mt-12 pt-8 border-t border-gray-200">
-          <div className="flex flex-wrap items-center justify-center gap-4 text-sm">
-            <Link href="/terms" className="text-blue-600 hover:underline">Terms and Conditions</Link>
-            <span className="text-gray-300">|</span>
-            <Link href="/privacy" className="text-blue-600 hover:underline">Privacy Policy</Link>
-            <span className="text-gray-300">|</span>
-            <Link href="/contact" className="text-blue-600 hover:underline">Contact</Link>
-            <span className="text-gray-300">|</span>
-            <Link href="/do-not-sell" className="text-blue-600 hover:underline">Do Not Sell</Link>
-          </div>
-          <p className="mt-6 text-center text-sm text-gray-500">
-            © 2026 Live Health Rates - All rights reserved.
-          </p>
-        </div>
       </div>
     </div>
   );
