@@ -78,7 +78,7 @@ export async function POST(request: NextRequest) {
       const leadProsperPayload = {
         // Required Lead Prosper fields
         lp_campaign_id: '32006',
-        lp_supplier_id: '9357',
+        lp_supplier_id: '101522',
         lp_key: 'v52s3lnu3n5',
         lp_action: '', // empty for live, 'test' for testing
         lp_subid1: request.headers.get('referer') || 'homepage',
