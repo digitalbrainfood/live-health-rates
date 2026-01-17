@@ -302,7 +302,7 @@ export default function PrivacyPage() {
               More information about our data collection and sharing practices can be found in this privacy notice.
             </p>
             <p className="text-gray-700 leading-relaxed mt-4">
-              You may contact us by email at contact@healthcoveragesearch.com, by calling toll-free at (833) 588-1588, or by referring to the contact details at the bottom of this document.
+              You may contact us by email at contact@healthcoveragesearch.com, by calling toll-free at (833) 741-1902, or by referring to the contact details at the bottom of this document.
             </p>
             <p className="text-gray-700 leading-relaxed mt-4">
               If you are using an authorized agent to exercise your right to opt-out we may deny a request if the authorized agent does not submit proof that they have been validly authorized to act on your behalf.
