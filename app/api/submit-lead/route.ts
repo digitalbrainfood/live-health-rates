@@ -84,17 +84,17 @@ export async function POST(request: NextRequest) {
         lp_subid1: request.headers.get('referer') || 'homepage',
         lp_subid2: '',
         // Lead data
-        fname: body.firstName || '',
-        lname: body.lastName || '',
+        first_name: body.firstName || '',
+        last_name: body.lastName || '',
         email: body.email || '',
         phone: body.phone?.replace(/\D/g, '') || '',
         address: body.address || '',
         city: body.city || '',
         state: body.state || '',
         zip: body.zipCode || '',
-        dob: body.dob || '',
-        income: body.householdIncome || '',
-        health_status: body.healthStatus || '',
+        date_of_birth: body.dob || '',
+        household_income: body.householdIncome || '',
+        consider_healthy: body.healthStatus || '',
       };
 
       console.log('Lead Prosper payload:', JSON.stringify(leadProsperPayload));
