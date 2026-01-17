@@ -69,10 +69,10 @@ export default function LandingPage() {
         </div>
 
         <a
-          href="tel:833-871-1998"
+          href="tel:833-741-1902"
           className="block w-full bg-[#f97316] text-white text-center py-4 rounded-lg font-semibold hover:bg-[#ea580c] transition-colors"
         >
-          <div>Call Us: 833-871-1998</div>
+          <div>Call Us: 833-741-1902</div>
           <div className="text-sm font-normal">TTY: 711</div>
         </a>
       </form>

@@ -458,9 +458,9 @@ function LandingQuoteContent() {
 
                 {/* Call Card */}
                 <div className="bg-gray-50 rounded-2xl p-8 mb-6">
-                  <p className="text-4xl font-bold text-[#10385b] mb-4">877-831-1528</p>
+                  <p className="text-4xl font-bold text-[#10385b] mb-4">833-741-1902</p>
                   <a
-                    href="tel:877-831-1528"
+                    href="tel:833-741-1902"
                     className="inline-flex items-center gap-2 bg-[#f97316] text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-[#ea580c] transition-colors"
                   >
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
