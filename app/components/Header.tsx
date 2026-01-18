@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Header() {
   return (
@@ -27,10 +28,14 @@ export default function Header() {
         <div className="max-w-7xl mx-auto w-full flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center">
-            <img
+            <Image
               src="/images/hcs-logo.svg"
               alt="Health Coverage Search"
+              width={245}
+              height={40}
               className="h-[40px] w-auto"
+              priority
+              unoptimized
             />
           </Link>
 
