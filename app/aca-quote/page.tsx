@@ -160,6 +160,13 @@ function LandingQuoteContent() {
     if (currentStep === 7) {
       // Submit lead data
       setIsSubmitting(true);
+
+      // Get TrustedForm certificate URL
+      const trustedFormCertUrl = (document.querySelector('input[name="xxTrustedFormCertUrl"]') as HTMLInputElement)?.value || '';
+
+      // TCPA consent text
+      const tcpaText = 'By clicking the "Get Quote" button above, I am providing my ESIGN signature and express written consent to the Health Coverage Search privacy policy and terms and conditions. I permit Health Coverage Search and its partners to contact me by email, text message, pre-recorded message, AI, or automated telephone technology on a recorded line for marketing purposes, even if my phone number is on any national or state "Do Not Call" list. Consent is not a condition of purchase. Message and data rates may apply.';
+
       try {
         await fetch('/api/submit-lead', {
           method: 'POST',
@@ -167,6 +174,8 @@ function LandingQuoteContent() {
           body: JSON.stringify({
             ...formData,
             source: 'landing-page',
+            trustedFormCertUrl,
+            tcpaText,
           }),
         });
       } catch (error) {
@@ -414,8 +423,8 @@ function LandingQuoteContent() {
                       className="mt-1 w-4 h-4 rounded border-gray-300 text-[#f97316] focus:ring-[#f97316]"
                     />
                     <label htmlFor="consent" className="text-xs text-gray-600">
-                      By clicking the &quot;Get Quote&quot; button above, I am providing my ESIGN signature and express written consent to the Live Health Rates privacy policy and terms and conditions. I permit Live Health Rates and its partners to contact me by email, text message, pre-recorded message, AI, or automated telephone technology on a recorded line for marketing purposes, even if my phone number is on any national or state &quot;Do Not Call&quot; list. Consent is not a condition of purchase. Message and data rates may apply. You may revoke your express consent at any time by emailing{' '}
-                      <a href="mailto:info@livehealthrates.com" className="text-blue-600 underline">info@livehealthrates.com</a>
+                      By clicking the &quot;Get Quote&quot; button above, I am providing my ESIGN signature and express written consent to the Health Coverage Search privacy policy and terms and conditions. I permit Health Coverage Search and its partners to contact me by email, text message, pre-recorded message, AI, or automated telephone technology on a recorded line for marketing purposes, even if my phone number is on any national or state &quot;Do Not Call&quot; list. Consent is not a condition of purchase. Message and data rates may apply. You may revoke your express consent at any time by emailing{' '}
+                      <a href="mailto:contact@healthcoveragesearch.com" className="text-blue-600 underline">contact@healthcoveragesearch.com</a>
                     </label>
                   </div>
                 </div>

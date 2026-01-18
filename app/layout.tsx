@@ -105,6 +105,24 @@ export default function RootLayout({
           src="https://t.contentsquare.net/uxa/cc757dc8c5848.js"
           strategy="afterInteractive"
         />
+
+        {/* TrustedForm */}
+        <Script id="trustedform" strategy="afterInteractive">
+          {`
+            (function() {
+              var field = 'xxTrustedFormCertUrl';
+              var provideReferrer = false;
+              var invertFieldSensitivity = false;
+              var tf = document.createElement('script');
+              tf.type = 'text/javascript'; tf.async = true;
+              tf.src = 'http' + ('https:' == document.location.protocol ? 's' : '') +
+                '://api.trustedform.com/trustedform.js?provide_referrer=' + escape(provideReferrer) +
+                '&field=' + escape(field) + '&l=' + new Date().getTime() + Math.random() +
+                '&invert_field_sensitivity=' + invertFieldSensitivity;
+              var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(tf, s);
+            })();
+          `}
+        </Script>
       </head>
       <body className={`${inter.variable} font-sans antialiased`}>
         <Header />

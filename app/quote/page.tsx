@@ -176,6 +176,12 @@ function QuoteFormContent() {
 
     setIsSubmitting(true);
 
+    // Get TrustedForm certificate URL
+    const trustedFormCertUrl = (document.querySelector('input[name="xxTrustedFormCertUrl"]') as HTMLInputElement)?.value || '';
+
+    // TCPA consent text
+    const tcpaText = 'By clicking the "Submit" button, you authorize Health Coverage Search to call you and send you pre-recorded messages and text messages at the number you entered, using an autodialer or AI, with offers about their products or services, even if your phone number is on any national or state "Do Not Call" list. Message and data rates may apply. Your consent here is not based on a condition of purchase. By clicking "Submit," you agree that Health Coverage Search and its marketing partners may call, text, or send pre-recorded messages to the number you provide, including through an autodialer or AI technology, with offers about products and services—even if your number is on a state or national "Do Not Call" list. You also confirm that you have read and agree to our Terms of Use and Privacy Policy. Message and data rates may apply, and your consent is not a condition of purchase.';
+
     try {
       const response = await fetch('/api/submit-lead', {
         method: 'POST',
@@ -185,6 +191,8 @@ function QuoteFormContent() {
         body: JSON.stringify({
           ...formData,
           dob: `${formData.dobMonth}/${formData.dobDay}/${formData.dobYear}`,
+          trustedFormCertUrl,
+          tcpaText,
         }),
       });
 
@@ -468,7 +476,7 @@ function QuoteFormContent() {
                     className="mt-1 w-5 h-5 rounded border-gray-300 text-[#f97316] focus:ring-[#f97316]"
                   />
                   <label htmlFor="tcpaConsent" className="text-sm text-gray-600">
-                    By clicking the &ldquo;Submit&rdquo; button, you authorize Live Health Rates to call you and send you pre-recorded messages and text messages at the number you entered, using an autodialer or AI, with offers about their products or services, even if your phone number is on any national or state &ldquo;Do Not Call&rdquo; list. Message and data rates may apply. Your consent here is not based on a condition of purchase.
+                    By clicking the &ldquo;Submit&rdquo; button, you authorize Health Coverage Search to call you and send you pre-recorded messages and text messages at the number you entered, using an autodialer or AI, with offers about their products or services, even if your phone number is on any national or state &ldquo;Do Not Call&rdquo; list. Message and data rates may apply. Your consent here is not based on a condition of purchase.
                   </label>
                 </div>
 
@@ -482,7 +490,7 @@ function QuoteFormContent() {
                     className="mt-1 w-5 h-5 rounded border-gray-300 text-[#f97316] focus:ring-[#f97316]"
                   />
                   <label htmlFor="marketingConsent" className="text-sm text-gray-600">
-                    By clicking &ldquo;Submit,&rdquo; you agree that Live Health Rates and its marketing partners may call, text, or send pre-recorded messages to the number you provide, including through an autodialer or AI technology, with offers about products and services—even if your number is on a state or national &ldquo;Do Not Call&rdquo; list. You also confirm that you have read and agree to our{' '}
+                    By clicking &ldquo;Submit,&rdquo; you agree that Health Coverage Search and its marketing partners may call, text, or send pre-recorded messages to the number you provide, including through an autodialer or AI technology, with offers about products and services—even if your number is on a state or national &ldquo;Do Not Call&rdquo; list. You also confirm that you have read and agree to our{' '}
                     <Link href="/terms" className="text-blue-600 hover:underline">Terms of Use</Link>{' '}
                     and{' '}
                     <Link href="/privacy" className="text-blue-600 hover:underline">Privacy Policy</Link>. Message and data rates may apply, and your consent is not a condition of purchase.

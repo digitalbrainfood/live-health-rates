@@ -12,6 +12,8 @@ interface LeadData {
   dob?: string;
   email?: string;
   phone?: string;
+  trustedFormCertUrl?: string;
+  tcpaText?: string;
 }
 
 export async function POST(request: NextRequest) {
@@ -73,6 +75,11 @@ export async function POST(request: NextRequest) {
       console.log('No phone number provided, skipping Ringba');
     }
 
+    // Get IP address from request headers
+    const ipAddress = request.headers.get('x-forwarded-for')?.split(',')[0]?.trim() ||
+                      request.headers.get('x-real-ip') ||
+                      '';
+
     // Submit to Lead Prosper API
     try {
       const leadProsperPayload = {
@@ -95,6 +102,10 @@ export async function POST(request: NextRequest) {
         date_of_birth: body.dob || '',
         household_income: body.householdIncome || '',
         consider_healthy: body.healthStatus || '',
+        // Additional compliance fields
+        ip_address: ipAddress,
+        tcpa_text: body.tcpaText || '',
+        trustedform_cert_url: body.trustedFormCertUrl || '',
       };
 
       console.log('Lead Prosper payload:', JSON.stringify(leadProsperPayload));
