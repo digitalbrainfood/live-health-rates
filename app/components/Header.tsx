@@ -1,7 +1,6 @@
 'use client';
 
 import Link from 'next/link';
-import Image from 'next/image';
 
 export default function Header() {
   return (
@@ -28,13 +27,10 @@ export default function Header() {
         <div className="max-w-7xl mx-auto w-full flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center">
-            <Image
-              src="/images/health-coverage-search.webp"
+            <img
+              src="/images/hcs-logo.svg"
               alt="Health Coverage Search"
-              width={180}
-              height={50}
-              className="max-h-[50px] w-auto object-contain"
-              priority
+              className="h-[40px] w-auto"
             />
           </Link>
 
