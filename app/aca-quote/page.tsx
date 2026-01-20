@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, Suspense } from 'react';
+import { useState, useEffect, useRef, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -89,6 +89,12 @@ function LandingQuoteContent() {
   const [currentStep, setCurrentStep] = useState(1);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [quoteExpiry, setQuoteExpiry] = useState(180); // 3 minutes in seconds
+
+  // Refs for auto-focus on each step
+  const firstNameRef = useRef<HTMLInputElement>(null);
+  const zipCodeRef = useRef<HTMLInputElement>(null);
+  const emailRef = useRef<HTMLInputElement>(null);
+
   const [formData, setFormData] = useState<FormData>({
     purchaseTiming: '',
     coverageType: '',
@@ -123,6 +129,21 @@ function LandingQuoteContent() {
       return () => clearInterval(timer);
     }
   }, [currentStep, quoteExpiry]);
+
+  // Auto-focus on first input of each step
+  useEffect(() => {
+    switch (currentStep) {
+      case 3:
+        firstNameRef.current?.focus();
+        break;
+      case 4:
+        zipCodeRef.current?.focus();
+        break;
+      case 7:
+        emailRef.current?.focus();
+        break;
+    }
+  }, [currentStep]);
 
   const updateField = (field: keyof FormData, value: string | boolean) => {
     setFormData(prev => ({ ...prev, [field]: value }));
@@ -195,6 +216,12 @@ function LandingQuoteContent() {
     }
   };
 
+  const handleKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === 'Enter' && canProceed() && currentStep < totalSteps) {
+      e.preventDefault();
+      handleNext();
+    }
+  };
 
   const progressPercentage = Math.round((currentStep / totalSteps) * 100);
 
@@ -301,8 +328,10 @@ function LandingQuoteContent() {
                     <label className="block text-sm font-medium text-gray-700 mb-1">First name</label>
                     <input
                       type="text"
+                      ref={firstNameRef}
                       value={formData.firstName}
                       onChange={(e) => updateField('firstName', e.target.value)}
+                      onKeyDown={handleKeyDown}
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#f97316] focus:border-transparent outline-none"
                     />
                   </div>
@@ -312,6 +341,7 @@ function LandingQuoteContent() {
                       type="text"
                       value={formData.lastName}
                       onChange={(e) => updateField('lastName', e.target.value)}
+                      onKeyDown={handleKeyDown}
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#f97316] focus:border-transparent outline-none"
                     />
                   </div>
@@ -342,8 +372,10 @@ function LandingQuoteContent() {
                     <label className="block text-sm font-medium text-gray-700 mb-1">Zip code</label>
                     <input
                       type="text"
+                      ref={zipCodeRef}
                       value={formData.zipCode}
                       onChange={(e) => updateField('zipCode', e.target.value.replace(/\D/g, '').slice(0, 5))}
+                      onKeyDown={handleKeyDown}
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#f97316] focus:border-transparent outline-none"
                       maxLength={5}
                     />
@@ -399,8 +431,10 @@ function LandingQuoteContent() {
                     <label className="block text-sm font-medium text-gray-700 mb-1">Email</label>
                     <input
                       type="email"
+                      ref={emailRef}
                       value={formData.email}
                       onChange={(e) => updateField('email', e.target.value)}
+                      onKeyDown={handleKeyDown}
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#f97316] focus:border-transparent outline-none"
                     />
                   </div>
@@ -410,6 +444,7 @@ function LandingQuoteContent() {
                       type="tel"
                       value={formData.phone}
                       onChange={(e) => updateField('phone', formatPhone(e.target.value))}
+                      onKeyDown={handleKeyDown}
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#f97316] focus:border-transparent outline-none"
                       placeholder="(555) 555-5555"
                     />

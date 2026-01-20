@@ -96,10 +96,13 @@ function QuoteFormContent() {
   const [currentStep, setCurrentStep] = useState(1);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  // Refs for date inputs auto-focus
+  // Refs for auto-focus on each step
+  const firstNameRef = useRef<HTMLInputElement>(null);
+  const addressRef = useRef<HTMLInputElement>(null);
   const dobMonthRef = useRef<HTMLInputElement>(null);
   const dobDayRef = useRef<HTMLInputElement>(null);
   const dobYearRef = useRef<HTMLInputElement>(null);
+  const emailRef = useRef<HTMLInputElement>(null);
 
   const [formData, setFormData] = useState<FormData>({
     firstName: '',
@@ -127,10 +130,21 @@ function QuoteFormContent() {
     }
   }, [searchParams]);
 
-  // Auto-focus on date of birth month input when step 5 loads
+  // Auto-focus on first input of each step
   useEffect(() => {
-    if (currentStep === 5) {
-      dobMonthRef.current?.focus();
+    switch (currentStep) {
+      case 1:
+        firstNameRef.current?.focus();
+        break;
+      case 2:
+        addressRef.current?.focus();
+        break;
+      case 5:
+        dobMonthRef.current?.focus();
+        break;
+      case 6:
+        emailRef.current?.focus();
+        break;
     }
   }, [currentStep]);
 
@@ -168,6 +182,13 @@ function QuoteFormContent() {
   const handleBack = () => {
     if (currentStep > 1) {
       setCurrentStep(prev => prev - 1);
+    }
+  };
+
+  const handleKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === 'Enter' && canProceed() && currentStep < totalSteps) {
+      e.preventDefault();
+      handleNext();
     }
   };
 
@@ -237,8 +258,10 @@ function QuoteFormContent() {
                   <input
                     type="text"
                     id="firstName"
+                    ref={firstNameRef}
                     value={formData.firstName}
                     onChange={(e) => updateField('firstName', e.target.value)}
+                    onKeyDown={handleKeyDown}
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#f97316] focus:border-transparent outline-none"
                   />
                 </div>
@@ -252,6 +275,7 @@ function QuoteFormContent() {
                     id="lastName"
                     value={formData.lastName}
                     onChange={(e) => updateField('lastName', e.target.value)}
+                    onKeyDown={handleKeyDown}
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#f97316] focus:border-transparent outline-none"
                   />
                 </div>
@@ -274,8 +298,10 @@ function QuoteFormContent() {
                   <input
                     type="text"
                     id="address"
+                    ref={addressRef}
                     value={formData.address}
                     onChange={(e) => updateField('address', e.target.value)}
+                    onKeyDown={handleKeyDown}
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#f97316] focus:border-transparent outline-none"
                   />
                 </div>
@@ -289,6 +315,7 @@ function QuoteFormContent() {
                     id="city"
                     value={formData.city}
                     onChange={(e) => updateField('city', e.target.value)}
+                    onKeyDown={handleKeyDown}
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#f97316] focus:border-transparent outline-none"
                   />
                 </div>
@@ -321,6 +348,7 @@ function QuoteFormContent() {
                       id="zipCode"
                       value={formData.zipCode}
                       onChange={(e) => updateField('zipCode', e.target.value.replace(/\D/g, '').slice(0, 5))}
+                      onKeyDown={handleKeyDown}
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#f97316] focus:border-transparent outline-none"
                       maxLength={5}
                     />
@@ -446,8 +474,10 @@ function QuoteFormContent() {
                   <input
                     type="email"
                     id="email"
+                    ref={emailRef}
                     value={formData.email}
                     onChange={(e) => updateField('email', e.target.value)}
+                    onKeyDown={handleKeyDown}
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#f97316] focus:border-transparent outline-none"
                   />
                 </div>
@@ -461,6 +491,7 @@ function QuoteFormContent() {
                     id="phone"
                     value={formData.phone}
                     onChange={(e) => updateField('phone', formatPhone(e.target.value))}
+                    onKeyDown={handleKeyDown}
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#f97316] focus:border-transparent outline-none"
                     placeholder="(555) 555-5555"
                   />
