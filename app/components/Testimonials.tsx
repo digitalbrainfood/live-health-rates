@@ -2,21 +2,37 @@
 
 import Image from 'next/image';
 
-export default function Testimonials() {
-  const testimonials = [
-    {
-      quote: "Losing my job meant losing my coverage. I was panicking until I found this service. The agent who called understood my situation immediately and presented options I never knew existed. Honestly saved me.",
-      name: 'Brandon T',
-      title: 'Marketing Manager',
-      image: '/images/health-insurance-consumer.webp',
-    },
-    {
-      quote: "Running a bakery means every dollar counts. I was skeptical at first, but the agent took real time to understand my business needs. Found coverage that actually fits my reality—not just my wallet's nightmare.",
-      name: 'Carla P',
-      title: 'Bakery Owner',
-      image: '/images/health-insurance-agent.webp',
-    },
-  ];
+export default function Testimonials({ variant = 'default' }: { variant?: 'default' | 'missedOpenEnrollment' }) {
+  const isMissed = variant === 'missedOpenEnrollment';
+  const testimonials = isMissed
+    ? [
+        {
+          quote: "I missed open enrollment and assumed I had to wait. The agent explained what I could do and helped me move forward with a clear plan.",
+          name: 'Amanda W',
+          title: 'Verified Customer',
+          image: '/images/woman-buying-health-insurance.webp',
+        },
+        {
+          quote: "After enrollment ended, I didn’t know where to start. This made it simple—clear steps, real help, and no pressure.",
+          name: 'Brandon T',
+          title: 'Verified Customer',
+          image: '/images/health-insurance-consumer.webp',
+        },
+      ]
+    : [
+        {
+          quote: "Losing my job meant losing my coverage. I was panicking until I found this service. The agent who called understood my situation immediately and presented options I never knew existed. Honestly saved me.",
+          name: 'Brandon T',
+          title: 'Marketing Manager',
+          image: '/images/health-insurance-consumer.webp',
+        },
+        {
+          quote: "Running a bakery means every dollar counts. I was skeptical at first, but the agent took real time to understand my business needs. Found coverage that actually fits my reality—not just my wallet's nightmare.",
+          name: 'Carla P',
+          title: 'Bakery Owner',
+          image: '/images/health-insurance-agent.webp',
+        },
+      ];
 
   return (
     <section className="bg-white py-16 px-4">

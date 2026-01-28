@@ -5,7 +5,8 @@ import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
 
-export default function HeroSection() {
+export default function HeroSection({ variant = 'default' }: { variant?: 'default' | 'missedOpenEnrollment' }) {
+  const isMissed = variant === 'missedOpenEnrollment';
   const router = useRouter();
   const [zipCode, setZipCode] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -37,19 +38,34 @@ export default function HeroSection() {
           <div className="space-y-8 order-2 lg:order-1">
             <div>
               <h1 className="text-4xl md:text-5xl font-bold text-[#10385b] leading-tight">
-                Save Up to 77% on
-                <br />
-                <span className="text-[#f97316]">Health Insurance</span>
+                {isMissed ? (
+                <>Missed Open Enrollment?<br /><span className="text-[#f97316]">See Your Options</span></>
+              ) : (
+                <>Save Up to 77% on<br /><span className="text-[#f97316]">Health Insurance</span></>
+              )}
               </h1>
               <p className="mt-4 text-lg text-gray-700">
-                Connect with experienced insurance professionals who&apos;ll help you navigate your options and find coverage that aligns with your lifestyle and budget.
+                {isMissed ? (
+                "Even if open enrollment has passed, you may still have coverage options depending on eligibility. We connect you with licensed insurance professionals who explain next steps clearly."
+              ) : (
+                "Connect with experienced insurance professionals who'll help you navigate your options and find coverage that aligns with your lifestyle and budget."
+              )}
               </p>
+              {isMissed && (
+                <p className="mt-3 text-xs text-gray-600">
+                  Coverage options and availability vary by eligibility. Not for Medicare or Medicaid enrollment.
+                </p>
+              )}
             </div>
 
             {/* Testimonial */}
             <div className="bg-white/30 backdrop-blur-sm rounded-lg p-6">
               <p className="text-gray-700 italic text-lg">
-                &ldquo;I had no idea navigating insurance could be this straightforward. My agent explained everything in plain English and helped me make a confident choice.&rdquo;
+                {isMissed ? (
+                "“I missed open enrollment and thought I was out of luck. My agent explained my options clearly and helped me take the next step.”"
+              ) : (
+                "“I had no idea navigating insurance could be this straightforward. My agent explained everything in plain English and helped me make a confident choice.”"
+              )}
               </p>
               <div className="flex items-center gap-3 mt-4">
                 <div className="w-12 h-12 flex-shrink-0 relative">
@@ -62,7 +78,7 @@ export default function HeroSection() {
                 </div>
                 <div>
                   <p className="font-semibold text-[#10385b]">Amanda W</p>
-                  <p className="text-sm text-gray-600">UX Designer</p>
+                  <p className="text-sm text-gray-600">{isMissed ? 'Verified Customer' : 'UX Designer'}</p>
                 </div>
               </div>
             </div>
@@ -72,7 +88,7 @@ export default function HeroSection() {
           <div id="quote-form" className="bg-white rounded-2xl shadow-xl p-8 order-1 lg:order-2">
             <div className="text-center mb-6">
               <h2 className="text-2xl font-bold text-[#10385b]">
-                Start Your Coverage Search
+                {isMissed ? 'Check Missed Enrollment Options' : 'Start Your Coverage Search'}
               </h2>
               <p className="text-gray-600 mt-2">Takes less than 60 seconds</p>
             </div>
@@ -101,7 +117,7 @@ export default function HeroSection() {
                 disabled={isSubmitting}
                 className="w-full bg-[#f97316] text-white py-4 rounded-lg font-semibold text-lg hover:bg-[#ea580c] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                {isSubmitting ? 'Loading...' : 'Connect With Agents'}
+                {isSubmitting ? 'Loading...' : (isMissed ? 'Check My Options' : 'Connect With Agents')}
               </button>
             </form>
 

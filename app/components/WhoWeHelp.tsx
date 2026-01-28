@@ -3,21 +3,19 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-export default function WhoWeHelp() {
-  const audiences = [
-    {
-      title: 'Independent Workers:',
-      description: 'Freelancers, contractors, and gig economy professionals who need flexible coverage without corporate benefits.',
-    },
-    {
-      title: 'Entrepreneurs:',
-      description: "Small business owners and startup founders searching for practical coverage solutions that won't drain the budget.",
-    },
-    {
-      title: 'Families & Individuals:',
-      description: 'Anyone tired of cookie-cutter options who wants genuine guidance in finding the right coverage fit.',
-    },
-  ];
+export default function WhoWeHelp({ variant = 'default' }: { variant?: 'default' | 'missedOpenEnrollment' }) {
+  const isMissed = variant === 'missedOpenEnrollment';
+  const audiences = isMissed
+    ? [
+        { title: 'Missed the Deadline:', description: 'People who missed open enrollment and want to know what options may still exist.' },
+        { title: 'Coverage Changes:', description: 'Anyone whose coverage changed recently and needs guidance on next steps.' },
+        { title: 'Ready to Act:', description: 'People who want clear answers fast—without spending hours researching.' },
+      ]
+    : [
+        { title: 'Independent Workers:', description: 'Freelancers, contractors, and gig economy professionals who need flexible coverage without corporate benefits.' },
+        { title: 'Entrepreneurs:', description: "Small business owners and startup founders searching for practical coverage solutions that won't drain the budget." },
+        { title: 'Families & Individuals:', description: 'Anyone tired of cookie-cutter options who wants genuine guidance in finding the right coverage fit.' },
+      ];
 
   return (
     <section className="bg-gray-50 py-16 px-4">
