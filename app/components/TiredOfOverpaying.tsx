@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
+<<<<<<< HEAD
 export type TiredOfOverpayingProps = {
   heading: string;
   paragraph1: string;
@@ -18,6 +19,14 @@ export default function TiredOfOverpaying({
   ctaText,
   ctaHref = '/quote',
 }: TiredOfOverpayingProps) {
+=======
+type TiredOfOverpayingProps = {
+  variant?: 'default' | 'missedOpenEnrollment';
+};
+
+export default function TiredOfOverpaying({ variant = 'default' }: TiredOfOverpayingProps) {
+  const isMissed = variant === 'missedOpenEnrollment';
+>>>>>>> 990ef8b (Fixed added missed open enrollment landing page)
   return (
     <section className="bg-white py-16 px-4">
       <div className="max-w-6xl mx-auto">

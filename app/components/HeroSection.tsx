@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
 
+<<<<<<< HEAD
 export type HeroTestimonial = {
   quote: string;
   name: string;
@@ -34,6 +35,14 @@ export default function HeroSection({
   submitButtonText,
   noteText,
 }: HeroSectionProps) {
+=======
+type HeroSectionProps = {
+  variant?: 'default' | 'missedOpenEnrollment';
+};
+
+export default function HeroSection({ variant = 'default' }: HeroSectionProps) {
+  const isMissed = variant === 'missedOpenEnrollment';
+>>>>>>> 990ef8b (Fixed added missed open enrollment landing page)
   const router = useRouter();
   const [zipCode, setZipCode] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
