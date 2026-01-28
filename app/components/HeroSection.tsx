@@ -5,7 +5,11 @@ import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
 
-export default function HeroSection({ variant = 'default' }: { variant?: 'default' | 'missedOpenEnrollment' }) {
+type HeroSectionProps = {
+  variant?: 'default' | 'missedOpenEnrollment';
+};
+
+export default function HeroSection({ variant = 'default' }: HeroSectionProps) {
   const isMissed = variant === 'missedOpenEnrollment';
   const router = useRouter();
   const [zipCode, setZipCode] = useState('');

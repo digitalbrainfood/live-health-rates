@@ -2,7 +2,11 @@
 
 import Image from 'next/image';
 
-export default function WhyOurPlans({ variant = 'default' }: { variant?: 'default' | 'missedOpenEnrollment' }) {
+type WhyOurPlansProps = {
+  variant?: 'default' | 'missedOpenEnrollment';
+};
+
+export default function WhyOurPlans({ variant = 'default' }: WhyOurPlansProps) {
   const isMissed = variant === 'missedOpenEnrollment';
   const benefits = isMissed
     ? [

@@ -2,7 +2,11 @@
 
 import Image from 'next/image';
 
-export default function Testimonials({ variant = 'default' }: { variant?: 'default' | 'missedOpenEnrollment' }) {
+type TestimonialsProps = {
+  variant?: 'default' | 'missedOpenEnrollment';
+};
+
+export default function Testimonials({ variant = 'default' }: TestimonialsProps) {
   const isMissed = variant === 'missedOpenEnrollment';
   const testimonials = isMissed
     ? [

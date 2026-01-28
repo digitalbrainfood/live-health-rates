@@ -3,7 +3,11 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-export default function TiredOfOverpaying({ variant = 'default' }: { variant?: 'default' | 'missedOpenEnrollment' }) {
+type TiredOfOverpayingProps = {
+  variant?: 'default' | 'missedOpenEnrollment';
+};
+
+export default function TiredOfOverpaying({ variant = 'default' }: TiredOfOverpayingProps) {
   const isMissed = variant === 'missedOpenEnrollment';
   return (
     <section className="bg-white py-16 px-4">

@@ -3,7 +3,11 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-export default function WhoWeHelp({ variant = 'default' }: { variant?: 'default' | 'missedOpenEnrollment' }) {
+type WhoWeHelpProps = {
+  variant?: 'default' | 'missedOpenEnrollment';
+};
+
+export default function WhoWeHelp({ variant = 'default' }: WhoWeHelpProps) {
   const isMissed = variant === 'missedOpenEnrollment';
   const audiences = isMissed
     ? [

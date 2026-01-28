@@ -1,28 +1,24 @@
 'use client';
 
-export default function HowItWorks() {
-  const steps = [
-    {
-      step: 1,
-      title: 'Share the Basics',
-      description: 'Quick form. No essays required. Just the essentials to get you matched.',
-    },
-    {
-      step: 2,
-      title: 'Discover Your Fit',
-      description: 'See which coverage paths might make sense based on your unique situation.',
-    },
-    {
-      step: 3,
-      title: 'Talk to the Pros',
-      description: 'Licensed agents reach out to walk you through options without pressure or jargon.',
-    },
-    {
-      step: 4,
-      title: 'Choose Confidently',
-      description: 'Make an informed decision that gives you peace of mind and financial security.',
-    },
-  ];
+type HowItWorksProps = {
+  variant?: 'default' | 'missedOpenEnrollment';
+};
+
+export default function HowItWorks({ variant = 'default' }: HowItWorksProps) {
+  const isMissed = variant === 'missedOpenEnrollment';
+  const steps = isMissed
+    ? [
+        { step: 1, title: 'Share the Basics', description: 'Quick form. Just the essentials to understand your situation.' },
+        { step: 2, title: 'Check Eligibility Paths', description: 'See what coverage routes may be available after open enrollment.' },
+        { step: 3, title: 'Speak With a Licensed Pro', description: 'Get clear explanations of options, timelines, and next steps.' },
+        { step: 4, title: 'Enroll If Eligible', description: 'Choose confidently and complete next steps with guided support.' },
+      ]
+    : [
+        { step: 1, title: 'Share the Basics', description: 'Quick form. No essays required. Just the essentials to get you matched.' },
+        { step: 2, title: 'Discover Your Fit', description: 'See which coverage paths might make sense based on your unique situation.' },
+        { step: 3, title: 'Talk to the Pros', description: 'Licensed agents reach out to walk you through options without pressure or jargon.' },
+        { step: 4, title: 'Choose Confidently', description: 'Make an informed decision that gives you peace of mind and financial security.' },
+      ];
 
   return (
     <section className="bg-gray-50 py-16 px-4">
