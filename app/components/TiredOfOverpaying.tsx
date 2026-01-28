@@ -3,7 +3,12 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-export default function TiredOfOverpaying() {
+type TiredOfOverpayingProps = {
+  variant?: 'default' | 'missedOpenEnrollment';
+};
+
+export default function TiredOfOverpaying({ variant = 'default' }: TiredOfOverpayingProps) {
+  const isMissed = variant === 'missedOpenEnrollment';
   return (
     <section className="bg-white py-16 px-4">
       <div className="max-w-6xl mx-auto">
@@ -26,11 +31,19 @@ export default function TiredOfOverpaying() {
             </h2>
 
             <p className="text-gray-700 leading-relaxed">
-              If you&apos;re self-employed, running your own show, or simply looking beyond traditional employer plans, you&apos;ve probably discovered that the insurance maze can feel impossible to navigate alone.
+              {isMissed ? (
+              "If you missed open enrollment, it’s easy to assume you have to wait. In reality, some people may still have coverage options depending on their situation and eligibility."
+            ) : (
+              "If you're self-employed, running your own show, or simply looking beyond traditional employer plans, you've probably discovered that the insurance maze can feel impossible to navigate alone."
+            )}
             </p>
 
             <p className="text-gray-700 leading-relaxed">
-              High premiums. Complex jargon. Endless options. We simplify the entire process by pairing you with <span className="text-[#10385b] font-semibold">knowledgeable agents who actually speak human</span> and genuinely want to help you succeed.
+              {isMissed ? (
+              <>High premiums. Confusing rules. Endless choices. We simplify the process by pairing you with <span className="text-[#10385b] font-semibold">licensed professionals who explain next steps clearly</span>—without jargon or pressure.</>
+            ) : (
+              <>High premiums. Complex jargon. Endless options. We simplify the entire process by pairing you with <span className="text-[#10385b] font-semibold">knowledgeable agents who actually speak human</span> and genuinely want to help you succeed.</>
+            )}
             </p>
 
             <Link

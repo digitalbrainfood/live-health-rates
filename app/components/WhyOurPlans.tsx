@@ -2,17 +2,33 @@
 
 import Image from 'next/image';
 
-export default function WhyOurPlans() {
-  const benefits = [
-    'Nationwide PPO Network Access',
-    'Potential Savings Compared to Traditional Plans',
-    'Reduced Out-of-Pocket Expense Options',
-    'Plans With Minimal or Zero Deductibles',
-    'Cost-Effective Solutions for Healthier Individuals',
-    'Rapid Coverage Start—Sometimes Next Day',
-    'Fast Application—Just Minutes to Complete',
-    'No Income Requirements to Qualify',
-  ];
+type WhyOurPlansProps = {
+  variant?: 'default' | 'missedOpenEnrollment';
+};
+
+export default function WhyOurPlans({ variant = 'default' }: WhyOurPlansProps) {
+  const isMissed = variant === 'missedOpenEnrollment';
+  const benefits = isMissed
+    ? [
+        'Eligibility help in plain English',
+        'Clear next steps & timelines',
+        'Compare plan types quickly',
+        'Licensed support—no guesswork',
+        'Fast application—minutes to complete',
+        'Guidance after missed enrollment',
+        'Options beyond employer plans',
+        'Help without pressure',
+      ]
+    : [
+        'Nationwide PPO Network Access',
+        'Potential Savings Compared to Traditional Plans',
+        'Reduced Out-of-Pocket Expense Options',
+        'Plans With Minimal or Zero Deductibles',
+        'Cost-Effective Solutions for Healthier Individuals',
+        'Rapid Coverage Start—Sometimes Next Day',
+        'Fast Application—Just Minutes to Complete',
+        'No Income Requirements to Qualify',
+      ];
 
   return (
     <section className="bg-white py-16 px-4">
