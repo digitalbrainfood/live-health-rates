@@ -2,23 +2,17 @@
 
 import Image from 'next/image';
 
-export default function WhyOurPlans() {
-  const benefits = [
-    'Nationwide PPO Network Access',
-    'Potential Savings Compared to Traditional Plans',
-    'Reduced Out-of-Pocket Expense Options',
-    'Plans With Minimal or Zero Deductibles',
-    'Cost-Effective Solutions for Healthier Individuals',
-    'Rapid Coverage Start—Sometimes Next Day',
-    'Fast Application—Just Minutes to Complete',
-    'No Income Requirements to Qualify',
-  ];
+export type WhyOurPlansProps = {
+  headingTop: string;
+  headingBottom: string;
+  benefits: string[];
+};
 
+export default function WhyOurPlans({ headingTop, headingBottom, benefits }: WhyOurPlansProps) {
   return (
     <section className="bg-white py-16 px-4">
       <div className="max-w-6xl mx-auto">
         <div className="grid md:grid-cols-2 gap-12 items-center">
-          {/* Image */}
           <div className="relative order-1 md:order-1">
             <Image
               src="/images/health-insurance-agent.webp"
@@ -29,12 +23,11 @@ export default function WhyOurPlans() {
             />
           </div>
 
-          {/* Content */}
           <div className="space-y-6 order-2 md:order-2">
             <h2 className="text-3xl md:text-4xl font-bold text-[#10385b] italic">
-              What Makes This
+              {headingTop}
               <br />
-              Process Different
+              {headingBottom}
             </h2>
 
             <ul className="space-y-3">

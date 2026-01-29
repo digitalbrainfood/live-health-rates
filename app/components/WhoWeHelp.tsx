@@ -3,31 +3,25 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-export default function WhoWeHelp() {
-  const audiences = [
-    {
-      title: 'Independent Workers:',
-      description: 'Freelancers, contractors, and gig economy professionals who need flexible coverage without corporate benefits.',
-    },
-    {
-      title: 'Entrepreneurs:',
-      description: "Small business owners and startup founders searching for practical coverage solutions that won't drain the budget.",
-    },
-    {
-      title: 'Families & Individuals:',
-      description: 'Anyone tired of cookie-cutter options who wants genuine guidance in finding the right coverage fit.',
-    },
-  ];
+export type WhoWeHelpAudience = {
+  title: string;
+  description: string;
+};
 
+export type WhoWeHelpProps = {
+  heading: string;
+  audiences: WhoWeHelpAudience[];
+  ctaText: string;
+  ctaHref?: string;
+};
+
+export default function WhoWeHelp({ heading, audiences, ctaText, ctaHref = '/quote' }: WhoWeHelpProps) {
   return (
     <section className="bg-gray-50 py-16 px-4">
       <div className="max-w-6xl mx-auto">
         <div className="grid md:grid-cols-2 gap-12 items-center">
-          {/* Content */}
           <div className="space-y-8 order-2 md:order-1">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#10385b]">
-              Who Thrives With Our Service
-            </h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-[#10385b]">{heading}</h2>
 
             <div className="space-y-6">
               {audiences.map((audience, index) => (
@@ -46,17 +40,16 @@ export default function WhoWeHelp() {
             </div>
 
             <Link
-              href="/quote"
+              href={ctaHref}
               className="inline-flex items-center gap-2 bg-[#f97316] text-white px-8 py-4 rounded-full font-semibold hover:bg-[#ea580c] transition-colors"
             >
-              Begin Your Search
+              {ctaText}
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
               </svg>
             </Link>
           </div>
 
-          {/* Image */}
           <div className="relative order-1 md:order-2">
             <Image
               src="/images/woman-buying-health-insurance.webp"
