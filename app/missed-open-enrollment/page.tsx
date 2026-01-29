@@ -6,7 +6,7 @@ import HowItWorks from "../components/HowItWorks";
 import WhyOurPlans from "../components/WhyOurPlans";
 import WhoWeHelp from "../components/WhoWeHelp";
 import Testimonials from "../components/Testimonials";
-import { missedOpenEnrollmentCopy } from "../content/landingCopy";
+import { copy } from "./copy";
 
 export const metadata: Metadata = {
   title: "Missed Open Enrollment? See Your Options",
@@ -15,16 +15,16 @@ export const metadata: Metadata = {
   alternates: { canonical: "https://healthcoveragesearch.com/missed-open-enrollment" },
 };
 
-export default function MissedOpenEnrollmentPage() {
+export default function Page() {
   return (
     <>
-      <HeroSection {...missedOpenEnrollmentCopy.hero} />
+      <HeroSection {...copy.hero} />
       <InsurancePartners />
-      <TiredOfOverpaying {...missedOpenEnrollmentCopy.tired} />
-      <HowItWorks {...missedOpenEnrollmentCopy.how} />
-      <WhyOurPlans {...missedOpenEnrollmentCopy.why} />
-      <WhoWeHelp {...missedOpenEnrollmentCopy.who} />
-      <Testimonials {...missedOpenEnrollmentCopy.testimonials} />
+      <TiredOfOverpaying {...copy.tired} />
+      <HowItWorks {...copy.how} />
+      <WhyOurPlans {...copy.why} />
+      <WhoWeHelp {...copy.who} />
+      <Testimonials {...copy.testimonials} />
     </>
   );
 }

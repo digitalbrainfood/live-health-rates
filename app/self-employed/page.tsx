@@ -9,10 +9,10 @@ import Testimonials from "../components/Testimonials";
 import { copy } from "./copy";
 
 export const metadata: Metadata = {
-  title: "Need Health Insurance Now? Immediate Coverage Options",
+  title: "Health Insurance for Self-Employed | Compare Options",
   description:
-    "Need health insurance now? Explore coverage options that may start soon—based on eligibility. Get clear next steps from licensed insurance professionals.",
-  alternates: { canonical: "https://healthcoveragesearch.com/need-insurance-now" },
+    "Self-employed? Compare health insurance options with licensed guidance—plan types, costs, and next steps in plain English.",
+  alternates: { canonical: "https://healthcoveragesearch.com/self-employed" },
 };
 
 export default function Page() {
