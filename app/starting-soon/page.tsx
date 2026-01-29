@@ -9,10 +9,10 @@ import Testimonials from "../components/Testimonials";
 import { copy } from "./copy";
 
 export const metadata: Metadata = {
-  title: "Need Health Insurance Now? Immediate Coverage Options",
+  title: "Health Insurance Starting Soon | No Waiting Surprises",
   description:
-    "Need health insurance now? Explore coverage options that may start soon—based on eligibility. Get clear next steps from licensed insurance professionals.",
-  alternates: { canonical: "https://healthcoveragesearch.com/need-insurance-now" },
+    "Need coverage to start soon? Explore fast-start options and timelines based on eligibility with licensed guidance.",
+  alternates: { canonical: "https://healthcoveragesearch.com/starting-soon" },
 };
 
 export default function Page() {

@@ -6,7 +6,7 @@ import HowItWorks from "./components/HowItWorks";
 import WhyOurPlans from "./components/WhyOurPlans";
 import WhoWeHelp from "./components/WhoWeHelp";
 import Testimonials from "./components/Testimonials";
-import { homeCopy } from "./content/landingCopy";
+import { copy } from "./homeCopy";
 
 export const metadata: Metadata = {
   title: "Health Coverage Search - Save Up to 77% on Health Insurance",
@@ -18,13 +18,13 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <>
-      <HeroSection {...homeCopy.hero} />
+      <HeroSection {...copy.hero} />
       <InsurancePartners />
-      <TiredOfOverpaying {...homeCopy.tired} />
-      <HowItWorks {...homeCopy.how} />
-      <WhyOurPlans {...homeCopy.why} />
-      <WhoWeHelp {...homeCopy.who} />
-      <Testimonials {...homeCopy.testimonials} />
+      <TiredOfOverpaying {...copy.tired} />
+      <HowItWorks {...copy.how} />
+      <WhyOurPlans {...copy.why} />
+      <WhoWeHelp {...copy.who} />
+      <Testimonials {...copy.testimonials} />
     </>
   );
 }
