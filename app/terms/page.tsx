@@ -22,6 +22,37 @@ export default function TermsPage() {
             </p>
           </section>
 
+          {/* Text Messaging Program Terms */}
+          <section>
+            <h2 className="text-2xl font-bold text-[#10385b] mb-4">Text Messaging Program Terms</h2>
+              <p className="text-gray-700 leading-relaxed">
+                By providing your mobile phone number and submitting a form on this website, you agree to participate in the{" "}<strong>Health Coverage Search Text Messaging Program</strong>, operated by{" "}<strong>Rising Health Insurance Agency FL LLC</strong> d/b/a{" "}<strong>HealthCoverageSearch.com</strong>.
+              </p>
+            <h3 className="text-xl font-semibold text-[#10385b] mb-3 mt-6">Program Description</h3>
+              <p className="text-gray-700 leading-relaxed">
+                The Health Coverage Search Text Messaging Program provides informational and marketing text messages related to health insurance coverage options, responses to consumer inquiries, follow-ups, appointment reminders, and other communications related to your request.
+              </p>
+            <h3 className="text-xl font-semibold text-[#10385b] mb-3 mt-6">Message Frequency</h3>
+              <p className="text-gray-700 leading-relaxed">
+                Message frequency may vary based on your interactions with us.
+              </p>
+            <h3 className="text-xl font-semibold text-[#10385b] mb-3 mt-6">Message and Data Rates</h3>
+              <p className="text-gray-700 leading-relaxed">
+                Message and data rates may apply depending on your mobile carrier and plan.
+              </p>
+            <h3 className="text-xl font-semibold text-[#10385b] mb-3 mt-6">Opt-Out and Help</h3>
+              <p className="text-gray-700 leading-relaxed">
+                You may opt out at any time by replying <strong>STOP</strong>. For help, reply <strong>HELP</strong> or contact us at{" "}<a href="mailto:contact@healthcoveragesearch.com" className="text-blue-600 hover:underline">contact@healthcoveragesearch.com</a>.
+              </p>
+            <h3 className="text-xl font-semibold text-[#10385b] mb-3 mt-6">Carrier Disclaimer</h3>
+              <p className="text-gray-700 leading-relaxed">
+                Carriers are not liable for delayed or undelivered messages.
+              </p>
+            <p className="text-gray-700 leading-relaxed mt-4">
+              For more information on how we collect, use, and protect your information, please review our{" "}<a href="/privacy" className="text-blue-600 hover:underline">Privacy Policy</a>.
+            </p>
+          </section>
+          
           {/* Intellectual Property Rights */}
           <section>
             <h2 className="text-2xl font-bold text-[#10385b] mb-4">Intellectual Property Rights</h2>
