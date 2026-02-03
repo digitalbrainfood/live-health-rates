@@ -88,7 +88,6 @@ interface FormData {
   email: string;
   phone: string;
   tcpaConsent: boolean;
-  marketingConsent: boolean;
 }
 
 function QuoteFormContent() {
@@ -119,7 +118,6 @@ function QuoteFormContent() {
     email: '',
     phone: '',
     tcpaConsent: false,
-    marketingConsent: false,
   });
 
   // Set zip code from URL params on mount
@@ -167,7 +165,7 @@ function QuoteFormContent() {
       case 5:
         return formData.dobMonth && formData.dobDay && formData.dobYear.length === 4;
       case 6:
-        return formData.email.includes('@') && formData.phone.length >= 10 && formData.tcpaConsent && formData.marketingConsent;
+        return formData.email.includes('@') && formData.phone.length >= 10 && formData.tcpaConsent;
       default:
         return false;
     }
@@ -201,7 +199,7 @@ function QuoteFormContent() {
     const trustedFormCertUrl = (document.querySelector('input[name="xxTrustedFormCertUrl"]') as HTMLInputElement)?.value || '';
 
     // TCPA consent text
-    const tcpaText = 'By clicking the "Submit" button, you authorize Health Coverage Search to call you and send you pre-recorded messages and text messages at the number you entered, using an autodialer or AI, with offers about their products or services, even if your phone number is on any national or state "Do Not Call" list. Message and data rates may apply. Your consent here is not based on a condition of purchase. By clicking "Submit," you agree that Health Coverage Search and its marketing partners may call, text, or send pre-recorded messages to the number you provide, including through an autodialer or AI technology, with offers about products and services—even if your number is on a state or national "Do Not Call" list. You also confirm that you have read and agree to our Terms of Use and Privacy Policy. Message and data rates may apply, and your consent is not a condition of purchase.';
+    const tcpaText = 'By clicking "Submit," you agree to our Terms and Conditions and Privacy Policy and consent to receive calls and text messages from Rising Health Insurance Agency FL LLC and healthcoveragesearch.com, including via autodialer, AI, or prerecorded messages, at the number you provide—even if your number is on a state or national Do Not Call list. Message frequency may vary. Message and data rates may apply. Reply STOP to opt out or HELP for help. Only Rising Health Insurance Agency FL LLC and healthcoveragesearch.com may send text messages. Consent is not a condition of purchase.';
 
     try {
       const response = await fetch('/api/submit-lead', {
@@ -507,26 +505,18 @@ function QuoteFormContent() {
                     className="mt-1 w-5 h-5 rounded border-gray-300 text-[#f97316] focus:ring-[#f97316]"
                   />
                   <label htmlFor="tcpaConsent" className="text-sm text-gray-600">
-                    By clicking the &ldquo;Submit&rdquo; button, you authorize Health Coverage Search to call you and send you pre-recorded messages and text messages at the number you entered, using an autodialer or AI, with offers about their products or services, even if your phone number is on any national or state &ldquo;Do Not Call&rdquo; list. Message and data rates may apply. Your consent here is not based on a condition of purchase.
+                    By clicking &ldquo;Submit,&rdquo; you agree to our{' '}
+                    <Link href="/terms" className="text-blue-600 hover:underline">Terms and Conditions</Link>{' '}
+                    and{' '}
+                    <Link href="/privacy" className="text-blue-600 hover:underline">Privacy Policy</Link>{' '}
+                    and consent to receive calls and text messages from Rising Health Insurance Agency FL LLC and healthcoveragesearch.com, including via autodialer, AI, or prerecorded messages, at the number you provide—even if your number is on a state or national Do Not Call list. Message frequency may vary. Message and data rates may apply. Reply STOP to opt out or HELP for help. Only Rising Health Insurance Agency FL LLC and healthcoveragesearch.com may send text messages. Consent is not a condition of purchase.
                   </label>
                 </div>
 
-                {/* Marketing Consent */}
-                <div className="flex items-start gap-3">
-                  <input
-                    type="checkbox"
-                    id="marketingConsent"
-                    checked={formData.marketingConsent}
-                    onChange={(e) => updateField('marketingConsent', e.target.checked)}
-                    className="mt-1 w-5 h-5 rounded border-gray-300 text-[#f97316] focus:ring-[#f97316]"
-                  />
-                  <label htmlFor="marketingConsent" className="text-sm text-gray-600">
-                    By clicking &ldquo;Submit,&rdquo; you agree that Health Coverage Search and its marketing partners may call, text, or send pre-recorded messages to the number you provide, including through an autodialer or AI technology, with offers about products and services—even if your number is on a state or national &ldquo;Do Not Call&rdquo; list. You also confirm that you have read and agree to our{' '}
-                    <Link href="/terms" className="text-blue-600 hover:underline">Terms of Use</Link>{' '}
-                    and{' '}
-                    <Link href="/privacy" className="text-blue-600 hover:underline">Privacy Policy</Link>. Message and data rates may apply, and your consent is not a condition of purchase.
-                  </label>
-                </div>
+                {/* Additional Disclaimer */}
+                <p className="text-xs text-gray-500">
+                  We may share your personal data with third-party partners and affiliates for marketing purposes or to contact you via voice call or email. This sharing excludes text messaging originator opt-in data and consent, which will not be shared with any third parties.
+                </p>
               </div>
             </div>
           )}
