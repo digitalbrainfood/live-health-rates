@@ -29,7 +29,7 @@ export default function Header() {
           {/* Logo */}
           <Link href="/" className="flex items-center">
             <img
-              src="/images/hcs-logo.svg"
+              src="/images/hcslogonew.webp"
               alt="Health Coverage Search"
               style={{ height: '40px', width: 'auto' }}
             />
