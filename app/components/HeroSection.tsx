@@ -5,12 +5,49 @@ import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
 
-type HeroSectionProps = {
-  variant?: 'default' | 'missedOpenEnrollment';
+// Config type for landing page variants
+type HeroConfig = {
+  headline: string;
+  headlineHighlight: string;
+  subheadline: string;
+  disclaimer?: string;
+  testimonial: {
+    quote: string;
+    name: string;
+    title: string;
+    image: string;
+  };
+  form: {
+    heading: string;
+    buttonText: string;
+  };
 };
 
-export default function HeroSection({ variant = 'default' }: HeroSectionProps) {
-  const isMissed = variant === 'missedOpenEnrollment';
+type HeroSectionProps = {
+  config?: HeroConfig;
+};
+
+// Default config for the main homepage
+const defaultConfig: HeroConfig = {
+  headline: 'Save Up to 77% on',
+  headlineHighlight: 'Health Insurance',
+  subheadline: "Connect with experienced insurance professionals who'll help you navigate your options and find coverage that aligns with your lifestyle and budget.",
+  testimonial: {
+    quote: "I had no idea navigating insurance could be this straightforward. My agent explained everything in plain English and helped me make a confident choice.",
+    name: 'Amanda W',
+    title: 'UX Designer',
+    image: '/images/woman-buying-health-insurance.webp',
+  },
+  form: {
+    heading: 'Start Your Coverage Search',
+    buttonText: 'Connect With Agents',
+  },
+};
+
+export default function HeroSection({ config }: HeroSectionProps) {
+  // Merge provided config with defaults
+  const content = config || defaultConfig;
+  
   const router = useRouter();
   const [zipCode, setZipCode] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -30,8 +67,9 @@ export default function HeroSection({ variant = 'default' }: HeroSectionProps) {
       localStorage.setItem('userZipCode', zipCode);
     }
 
-    // Redirect to quote page with zip code
-    router.push(`/quote?zip=${zipCode}`);
+    // Redirect to quote page with zip code and Get the landing page slug
+    const slug = window.location.pathname.split('/').pop() || 'homepage';
+    router.push(`/quote?zip=${zipCode}&src=${slug}`);
   };
 
   return (
@@ -42,22 +80,16 @@ export default function HeroSection({ variant = 'default' }: HeroSectionProps) {
           <div className="space-y-8 order-2 lg:order-1">
             <div>
               <h1 className="text-4xl md:text-5xl font-bold text-[#10385b] leading-tight">
-                {isMissed ? (
-                <>Missed Open Enrollment?<br /><span className="text-[#f97316]">See Your Options</span></>
-              ) : (
-                <>Save Up to 77% on<br /><span className="text-[#f97316]">Health Insurance</span></>
-              )}
+                {content.headline}
+                <br />
+                <span className="text-[#f97316]">{content.headlineHighlight}</span>
               </h1>
               <p className="mt-4 text-lg text-gray-700">
-                {isMissed ? (
-                "Even if open enrollment has passed, you may still have coverage options depending on eligibility. We connect you with licensed insurance professionals who explain next steps clearly."
-              ) : (
-                "Connect with experienced insurance professionals who'll help you navigate your options and find coverage that aligns with your lifestyle and budget."
-              )}
+                {content.subheadline}
               </p>
-              {isMissed && (
+              {content.disclaimer && (
                 <p className="mt-3 text-xs text-gray-600">
-                  Coverage options and availability vary by eligibility. Not for Medicare or Medicaid enrollment.
+                  {content.disclaimer}
                 </p>
               )}
             </div>
@@ -65,24 +97,20 @@ export default function HeroSection({ variant = 'default' }: HeroSectionProps) {
             {/* Testimonial */}
             <div className="bg-white/30 backdrop-blur-sm rounded-lg p-6">
               <p className="text-gray-700 italic text-lg">
-                {isMissed ? (
-                "“I missed open enrollment and thought I was out of luck. My agent explained my options clearly and helped me take the next step.”"
-              ) : (
-                "“I had no idea navigating insurance could be this straightforward. My agent explained everything in plain English and helped me make a confident choice.”"
-              )}
+                "{content.testimonial.quote}"
               </p>
               <div className="flex items-center gap-3 mt-4">
                 <div className="w-12 h-12 flex-shrink-0 relative">
                   <Image
-                    src="/images/woman-buying-health-insurance.webp"
-                    alt="Amanda W"
+                    src={content.testimonial.image}
+                    alt={content.testimonial.name}
                     fill
                     className="object-cover object-top rounded-full"
                   />
                 </div>
                 <div>
-                  <p className="font-semibold text-[#10385b]">Amanda W</p>
-                  <p className="text-sm text-gray-600">{isMissed ? 'Verified Customer' : 'UX Designer'}</p>
+                  <p className="font-semibold text-[#10385b]">{content.testimonial.name}</p>
+                  <p className="text-sm text-gray-600">{content.testimonial.title}</p>
                 </div>
               </div>
             </div>
@@ -92,7 +120,7 @@ export default function HeroSection({ variant = 'default' }: HeroSectionProps) {
           <div id="quote-form" className="bg-white rounded-2xl shadow-xl p-8 order-1 lg:order-2">
             <div className="text-center mb-6">
               <h2 className="text-2xl font-bold text-[#10385b]">
-                {isMissed ? 'Check Missed Enrollment Options' : 'Start Your Coverage Search'}
+                {content.form.heading}
               </h2>
               <p className="text-gray-600 mt-2">Takes less than 60 seconds</p>
             </div>
@@ -121,7 +149,7 @@ export default function HeroSection({ variant = 'default' }: HeroSectionProps) {
                 disabled={isSubmitting}
                 className="w-full bg-[#f97316] text-white py-4 rounded-lg font-semibold text-lg hover:bg-[#ea580c] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                {isSubmitting ? 'Loading...' : (isMissed ? 'Check My Options' : 'Connect With Agents')}
+                {isSubmitting ? 'Loading...' : content.form.buttonText}
               </button>
             </form>
 

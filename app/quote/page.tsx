@@ -92,6 +92,7 @@ interface FormData {
 
 function QuoteFormContent() {
   const searchParams = useSearchParams();
+  const leadSource = searchParams.get('src') || 'homepage';
   const [currentStep, setCurrentStep] = useState(1);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -212,6 +213,7 @@ function QuoteFormContent() {
           dob: `${formData.dobMonth}/${formData.dobDay}/${formData.dobYear}`,
           trustedFormCertUrl,
           tcpaText,
+          leadSource,
         }),
       });
 
