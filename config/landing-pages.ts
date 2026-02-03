@@ -337,6 +337,83 @@ export const landingPages: LandingPageConfig[] = [
       },
     },
   },
+// ============================================
+  // 13. COBRA Alternative
+  // ============================================
+  {
+    slug: 'cobra-alternative',
+    meta: {
+      title: 'COBRA Alternative - Save Money on Health Coverage | Health Coverage Search',
+      description: 'COBRA too expensive? Find affordable alternatives to COBRA coverage. Connect with licensed agents who can save you hundreds per month.',
+    },
+    hero: {
+      headline: 'COBRA Too',
+      headlineHighlight: 'Expensive?',
+      subheadline: "COBRA can cost $1,500-$2,000+ per month. We connect you with licensed professionals who specialize in finding comparable coverage at a fraction of the price.",
+      testimonial: {
+        quote: "My COBRA quote was $1,800/month. My agent found me similar coverage for $400. I couldn't believe the difference.",
+        name: 'Michelle S',
+        title: 'Verified Customer',
+        image: '/images/woman-buying-health-insurance.webp',
+      },
+      form: {
+        heading: 'Find COBRA Alternatives',
+        buttonText: 'Compare My Options',
+      },
+    },
+  },
+
+  // ============================================
+  // 14. Turning 26
+  // ============================================
+  {
+    slug: 'turning-26',
+    meta: {
+      title: 'Turning 26? Find Your Own Health Insurance | Health Coverage Search',
+      description: "Aging off your parents' health insurance? Find affordable coverage before you turn 26. Connect with licensed agents who make it simple.",
+    },
+    hero: {
+      headline: 'Turning 26?',
+      headlineHighlight: "Time for Your Own Plan",
+      subheadline: "Aging off your parents' insurance doesn't have to be stressful. We connect you with licensed professionals who help young adults find affordable coverage before the deadline.",
+      testimonial: {
+        quote: "I had no idea where to start when I turned 26. My agent walked me through everything and found me a great plan in my budget.",
+        name: 'Alex P',
+        title: 'Graduate Student',
+        image: '/images/woman-buying-health-insurance.webp',
+      },
+      form: {
+        heading: 'Find Coverage Before 26',
+        buttonText: 'Get Started Now',
+      },
+    },
+  },
+
+  // ============================================
+  // 15. Family Health Insurance
+  // ============================================
+  {
+    slug: 'family',
+    meta: {
+      title: 'Family Health Insurance Plans | Health Coverage Search',
+      description: 'Find affordable health coverage for your entire family. Connect with licensed agents who specialize in family plans.',
+    },
+    hero: {
+      headline: 'Protect Your',
+      headlineHighlight: 'Whole Family',
+      subheadline: "Finding one plan that covers everyone at a price you can afford isn't easy. We connect you with licensed professionals who specialize in family coverage options.",
+      testimonial: {
+        quote: "With 3 kids, I was overwhelmed by options. My agent found us a plan that covers everyone for less than I was paying before.",
+        name: 'Sarah M',
+        title: 'Mother of 3',
+        image: '/images/woman-buying-health-insurance.webp',
+      },
+      form: {
+        heading: 'Find Family Coverage',
+        buttonText: 'Cover My Family',
+      },
+    },
+  },
 ];
 
 // Helper function to get a landing page by slug
