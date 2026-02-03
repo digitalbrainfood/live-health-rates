@@ -199,7 +199,7 @@ function QuoteFormContent() {
     const trustedFormCertUrl = (document.querySelector('input[name="xxTrustedFormCertUrl"]') as HTMLInputElement)?.value || '';
 
     // TCPA consent text
-    const tcpaText = 'By clicking "Submit," you agree to our Terms and Conditions and Privacy Policy and consent to receive calls and text messages from Rising Health Insurance Agency FL LLC and healthcoveragesearch.com, including via autodialer, AI, or prerecorded messages, at the number you provide—even if your number is on a state or national Do Not Call list. Message frequency may vary. Message and data rates may apply. Reply STOP to opt out or HELP for help. Only Rising Health Insurance Agency FL LLC and healthcoveragesearch.com may send text messages. Consent is not a condition of purchase.';
+    const tcpaText = 'By clicking "Submit," you agree to our Terms and Conditions and Privacy Policy and consent to receive calls and text messages, including marketing messages, from Rising Health Insurance Agency FL LLC and healthcoveragesearch.com, including via autodialer, AI, or prerecorded messages, at the number you provide—even if your number is on a state or national Do Not Call list. Message frequency may vary. Message and data rates may apply. Reply STOP to opt out or HELP for help. Only Rising Health Insurance Agency FL LLC and healthcoveragesearch.com may send text messages. Consent is not a condition of purchase.';
 
     try {
       const response = await fetch('/api/submit-lead', {
@@ -509,7 +509,7 @@ function QuoteFormContent() {
                     <Link href="/terms" className="text-blue-600 hover:underline">Terms and Conditions</Link>{' '}
                     and{' '}
                     <Link href="/privacy" className="text-blue-600 hover:underline">Privacy Policy</Link>{' '}
-                    and consent to receive calls and text messages from Rising Health Insurance Agency FL LLC and healthcoveragesearch.com, including via autodialer, AI, or prerecorded messages, at the number you provide—even if your number is on a state or national Do Not Call list. Message frequency may vary. Message and data rates may apply. Reply STOP to opt out or HELP for help. Only Rising Health Insurance Agency FL LLC and healthcoveragesearch.com may send text messages. Consent is not a condition of purchase.
+                    and consent to receive calls and text messages, including marketing messages, from Rising Health Insurance Agency FL LLC and healthcoveragesearch.com, including via autodialer, AI, or prerecorded messages, at the number you provide—even if your number is on a state or national Do Not Call list. Message frequency may vary. Message and data rates may apply. Reply STOP to opt out or HELP for help. Only Rising Health Insurance Agency FL LLC and healthcoveragesearch.com may send text messages. Consent is not a condition of purchase.
                   </label>
                 </div>
 
