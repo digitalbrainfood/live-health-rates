@@ -312,6 +312,31 @@ export const landingPages: LandingPageConfig[] = [
       },
     },
   },
+// ============================================
+  // 12. Non-ACA Health Insurance
+  // ============================================
+  {
+    slug: 'non-aca',
+    meta: {
+      title: 'Non-ACA Health Insurance Plans | Health Coverage Search',
+      description: 'Explore health insurance options outside the ACA marketplace. No open enrollment restrictions, no income requirements. Connect with licensed agents today.',
+    },
+    hero: {
+      headline: 'Want Coverage',
+      headlineHighlight: 'Outside the ACA?',
+      subheadline: "Skip the marketplace restrictions. Non-ACA plans offer year-round enrollment, no income requirements, and more flexibility. We connect you with licensed professionals who specialize in these options.",
+      testimonial: {
+        quote: "I made too much for subsidies and the marketplace plans were overpriced. My agent found me a non-ACA plan that saved me hundreds per month.",
+        name: 'Brian T',
+        title: 'Verified Customer',
+        image: '/images/woman-buying-health-insurance.webp',
+      },
+      form: {
+        heading: 'Explore Non-ACA Plans',
+        buttonText: 'See My Options',
+      },
+    },
+  },
 ];
 
 // Helper function to get a landing page by slug
