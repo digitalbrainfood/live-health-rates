@@ -14,6 +14,7 @@ interface LeadData {
   phone?: string;
   trustedFormCertUrl?: string;
   tcpaText?: string;
+  leadSource?: string;
 }
 
 export async function POST(request: NextRequest) {
@@ -88,7 +89,7 @@ export async function POST(request: NextRequest) {
         lp_supplier_id: '101522',
         lp_key: 'doxbk0pxcj2qr',
         lp_action: '', // empty for live, 'test' for testing
-        lp_subid1: request.headers.get('referer') || 'homepage',
+        lp_subid1: body.leadSource || 'homepage',
         lp_subid2: '',
         // Lead data
         first_name: body.firstName || '',
