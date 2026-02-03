@@ -5,7 +5,7 @@ export default function PrivacyPage() {
     <div className="min-h-screen bg-white">
       <div className="max-w-4xl mx-auto px-4 py-12">
         <h1 className="text-4xl font-bold text-[#10385b] mb-2">Privacy Policy</h1>
-        <p className="text-gray-500 mb-8">Last updated Oct 25, 2025</p>
+        <p className="text-gray-500 mb-8">Last updated Feb 3, 2026</p>
 
         <div className="prose prose-gray max-w-none space-y-8">
           <p className="text-gray-700 leading-relaxed">
@@ -29,6 +29,7 @@ export default function PrivacyPage() {
               <li><a href="#section2" className="text-blue-600 hover:underline">HOW DO WE USE YOUR INFORMATION?</a></li>
               <li><a href="#section3" className="text-blue-600 hover:underline">WILL YOUR INFORMATION BE SHARED WITH ANYONE?</a></li>
               <li><a href="#section4" className="text-blue-600 hover:underline">WHO WILL YOUR INFORMATION BE SHARED WITH?</a></li>
+              <li><a href="#section4a" className="text-blue-600 hover:underline">TEXT MESSAGING CONSENT AND DATA USE</a></li>
               <li><a href="#section5" className="text-blue-600 hover:underline">DO WE USE COOKIES AND OTHER TRACKING TECHNOLOGIES?</a></li>
               <li><a href="#section6" className="text-blue-600 hover:underline">DO WE USE GOOGLE MAPS PLATFORM APIS?</a></li>
               <li><a href="#section7" className="text-blue-600 hover:underline">HOW LONG DO WE KEEP YOUR INFORMATION?</a></li>
@@ -164,6 +165,20 @@ export default function PrivacyPage() {
               <li><strong>Web and Mobile Analytics:</strong> Facebook Analytics and Google Analytics</li>
               <li><strong>Website Hosting:</strong> Cloudways</li>
             </ul>
+          </section>
+
+          {/* Section 4a */}
+          <section id="section4a" className="mt-8">
+            <h2 className="text-2xl font-bold text-[#10385b] mb-4"> 4A. TEXT MESSAGING CONSENT AND DATA USE</h2>
+            <p className="text-gray-700 leading-relaxed mt-4">
+              When you provide your mobile phone number and consent to receive text messages, we collect and use that information solely to communicate with you regarding our services and available health insurance options.
+            </p>
+            <p className="text-gray-700 leading-relaxed mt-4">
+            <strong>All categories of personal information described in this Privacy Policy exclude text messaging originator opt-in data and consent; this information will not be shared, sold, rented, or transferred to any third parties.</strong>{" "}Only <strong>Rising Health Insurance Agency FL LLC</strong> and{" "}<strong>healthcoveragesearch.com</strong> may send text messages to individuals who have opted in.
+            </p>
+            <p className="text-gray-700 leading-relaxed mt-4"> 
+              We may share text messaging opt-in data and consent only with our telecommunications service providers (such as{" "} <strong>Twilio</strong>) and mobile network carriers (such as <strong>Verizon</strong>, <strong>AT&amp;T</strong>, and <strong>T-Mobile</strong>) strictly as necessary to deliver text messages or to comply with legal, regulatory, or investigatory requests. This information is not used by any third party for marketing purposes.
+            </p>
           </section>
 
           {/* Section 5 */}
