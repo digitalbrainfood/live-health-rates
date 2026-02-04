@@ -3,18 +3,20 @@ import { NextRequest, NextResponse } from 'next/server';
 interface LeadData {
   firstName?: string;
   lastName?: string;
-  address?: string;
-  city?: string;
   state?: string;
   zipCode: string;
-  householdIncome?: string;
+  pregnancy?: string;
   healthStatus?: string;
-  dob?: string;
+  budget?: string;
+  urgency?: string;
   email?: string;
   phone?: string;
   trustedFormCertUrl?: string;
   tcpaText?: string;
   leadSource?: string;
+  utmCampaign?: string;
+  utmAdset?: string;
+  utmAd?: string;
 }
 
 export async function POST(request: NextRequest) {
@@ -50,7 +52,7 @@ export async function POST(request: NextRequest) {
         enrichUrl.searchParams.set('lastName', body.lastName || '');
         enrichUrl.searchParams.set('zipCode', body.zipCode || '');
         enrichUrl.searchParams.set('email', body.email || '');
-        enrichUrl.searchParams.set('source', 'livehealthrates.com');
+        enrichUrl.searchParams.set('source', 'healthcoveragesearch.com');
 
         console.log('Ringba URL:', enrichUrl.toString());
 
@@ -81,6 +83,14 @@ export async function POST(request: NextRequest) {
                       request.headers.get('x-real-ip') ||
                       '';
 
+    // Build lead source string: source | campaign | adset | ad
+    const sourceString = [
+      body.leadSource || 'homepage',
+      body.utmCampaign,
+      body.utmAdset,
+      body.utmAd,
+    ].filter(Boolean).join(' | ');
+
     // Submit to Lead Prosper API
     try {
       const leadProsperPayload = {
@@ -88,22 +98,25 @@ export async function POST(request: NextRequest) {
         lp_campaign_id: '32006',
         lp_supplier_id: '101522',
         lp_key: 'doxbk0pxcj2qr',
-        lp_action: '', // empty for live, 'test' for testing
-        lp_subid1: body.leadSource || 'homepage',
-        lp_subid2: '',
+        lp_action: '',
+        // Tracking subids
+        lp_subid1: sourceString,
+        lp_subid2: body.utmCampaign || '',
+        lp_subid3: body.utmAdset || '',
+        lp_subid4: body.utmAd || '',
         // Lead data
         first_name: body.firstName || '',
         last_name: body.lastName || '',
         email: body.email || '',
         phone: body.phone?.replace(/\D/g, '') || '',
-        address: body.address || '',
-        city: body.city || '',
         state: body.state || '',
         zip: body.zipCode || '',
-        date_of_birth: body.dob || '',
-        household_income: body.householdIncome || '',
-        consider_healthy: body.healthStatus || '',
-        // Additional compliance fields
+        // Qualifying fields
+        pregnancy: body.pregnancy || '',
+        health_status: body.healthStatus || '',
+        budget: body.budget || '',
+        urgency: body.urgency || '',
+        // Compliance fields
         ip_address: ipAddress,
         tcpa_text: body.tcpaText || '',
         trustedform_cert_url: body.trustedFormCertUrl || '',
@@ -133,23 +146,21 @@ export async function POST(request: NextRequest) {
       console.error('Lead Prosper submission error:', error);
     }
 
-    // Return success if at least one submission worked, or if we have the basic data
     const anySuccess = results.ringba.success || results.leadProsper.success;
 
     console.log('=== LEAD SUBMISSION COMPLETE ===');
     console.log('Results:', JSON.stringify(results));
 
     return NextResponse.json({
-      success: true, // Always return success to not block UX
+      success: true,
       message: anySuccess ? 'Lead submitted successfully' : 'Lead received',
       phoneNumber: '833-741-1902',
-      results, // Temporarily show results for debugging
+      results,
     });
 
   } catch (error) {
     console.error('Error submitting lead:', error);
 
-    // Return success anyway to not break UX
     return NextResponse.json({
       success: true,
       message: 'Lead received',
