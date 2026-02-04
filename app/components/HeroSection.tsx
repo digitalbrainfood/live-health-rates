@@ -187,7 +187,7 @@ export default function HeroSection({ config }: HeroSectionProps) {
             {/* Consent Text */}
             <div className="mt-4 p-3 bg-gray-50 rounded-lg">
               <p className="text-xs text-gray-500 leading-relaxed text-left">
-                Submitting this form means you&apos;re giving Health Coverage Search and our partner network explicit permission to reach you via phone (including automated dialing), text, or email—even if you&apos;re on a Do Not Call list. Your details may be sold or shared with licensed insurance pros for marketing. See our{' '}
+                By submitting this form, you agree that <strong>Health Coverage Search</strong> may contact you by phone, text message, or email regarding your request, including through automated technology, even if your number is on a state or national Do Not Call list. Your information may be shared with licensed insurance professionals for contact by <strong> phone call or email only</strong>. <strong>Only Health Coverage Search may send text messages.</strong>{' '}Message and data rates may apply. No purchase required. See our{' '}
                 <Link href="/terms" className="text-blue-600 underline">Terms</Link> and{' '}
                 <Link href="/privacy" className="text-blue-600 underline">Privacy Policy</Link>. Standard messaging rates apply. No purchase necessary.
               </p>
