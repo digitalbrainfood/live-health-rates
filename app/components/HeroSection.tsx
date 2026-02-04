@@ -45,7 +45,6 @@ const defaultConfig: HeroConfig = {
 };
 
 export default function HeroSection({ config }: HeroSectionProps) {
-  // Merge provided config with defaults
   const content = config || defaultConfig;
   
   const router = useRouter();
@@ -62,14 +61,28 @@ export default function HeroSection({ config }: HeroSectionProps) {
 
     setIsSubmitting(true);
 
-    // Store zip code and redirect to quote form
     if (typeof window !== 'undefined') {
       localStorage.setItem('userZipCode', zipCode);
     }
 
-    // Redirect to quote page with zip code and Get the landing page slug
+    // Get the landing page slug
     const slug = window.location.pathname.split('/').pop() || 'homepage';
-    router.push(`/quote?zip=${zipCode}&src=${slug}`);
+
+    // Capture any UTM params from the current URL (from Meta ads)
+    const currentParams = new URLSearchParams(window.location.search);
+    const utmCampaign = currentParams.get('utm_campaign') || '';
+    const utmAdset = currentParams.get('utm_adset') || '';
+    const utmAd = currentParams.get('utm_ad') || '';
+
+    // Build quote URL with all tracking params
+    const quoteParams = new URLSearchParams();
+    quoteParams.set('zip', zipCode);
+    quoteParams.set('src', slug);
+    if (utmCampaign) quoteParams.set('utm_campaign', utmCampaign);
+    if (utmAdset) quoteParams.set('utm_adset', utmAdset);
+    if (utmAd) quoteParams.set('utm_ad', utmAd);
+
+    router.push(`/quote?${quoteParams.toString()}`);
   };
 
   return (
@@ -97,7 +110,7 @@ export default function HeroSection({ config }: HeroSectionProps) {
             {/* Testimonial */}
             <div className="bg-white/30 backdrop-blur-sm rounded-lg p-6">
               <p className="text-gray-700 italic text-lg">
-                "{content.testimonial.quote}"
+                &ldquo;{content.testimonial.quote}&rdquo;
               </p>
               <div className="flex items-center gap-3 mt-4">
                 <div className="w-12 h-12 flex-shrink-0 relative">
@@ -187,7 +200,7 @@ export default function HeroSection({ config }: HeroSectionProps) {
             {/* Consent Text */}
             <div className="mt-4 p-3 bg-gray-50 rounded-lg">
               <p className="text-xs text-gray-500 leading-relaxed text-left">
-                By submitting this form, you agree that <strong>Health Coverage Search</strong> may contact you by phone, text message, or email regarding your request, including through automated technology, even if your number is on a state or national Do Not Call list. Your information may be shared with licensed insurance professionals for contact by <strong> phone call or email only</strong>. <strong>Only Health Coverage Search may send text messages.</strong>{' '}Message and data rates may apply. No purchase required. See our{' '}
+                Submitting this form means you&apos;re giving Health Coverage Search and our partner network explicit permission to reach you via phone (including automated dialing), text, or email—even if you&apos;re on a Do Not Call list. Your details may be sold or shared with licensed insurance pros for marketing. See our{' '}
                 <Link href="/terms" className="text-blue-600 underline">Terms</Link> and{' '}
                 <Link href="/privacy" className="text-blue-600 underline">Privacy Policy</Link>. Standard messaging rates apply. No purchase necessary.
               </p>

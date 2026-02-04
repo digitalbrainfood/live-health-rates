@@ -1,5 +1,10 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { verificationStore } from '@/app/lib/verification-store';
+import twilio from 'twilio';
+
+const client = twilio(
+  process.env.TWILIO_ACCOUNT_SID,
+  process.env.TWILIO_AUTH_TOKEN
+);
 
 export async function POST(request: NextRequest) {
   try {
@@ -7,33 +12,42 @@ export async function POST(request: NextRequest) {
 
     if (!phone || !code) {
       return NextResponse.json(
-        { error: 'Phone and code are required' },
+        { error: 'Phone number and code are required' },
         { status: 400 }
       );
     }
 
-    // Clean phone number
-    const cleanPhone = phone.replace(/\D/g, '');
+    // Clean phone number to E.164 format
+    const cleaned = phone.replace(/\D/g, '');
+    const e164 = cleaned.startsWith('1') ? `+${cleaned}` : `+1${cleaned}`;
 
-    // Verify the code
-    const result = verificationStore.verify(cleanPhone, code);
+    console.log('Verifying code for:', e164);
 
-    if (!result.success) {
-      return NextResponse.json(
-        { error: result.error },
-        { status: 400 }
-      );
+    const verificationCheck = await client.verify.v2
+      .services(process.env.TWILIO_VERIFY_SERVICE_SID!)
+      .verificationChecks.create({
+        to: e164,
+        code: code,
+      });
+
+    console.log('Verification check status:', verificationCheck.status);
+
+    if (verificationCheck.status === 'approved') {
+      return NextResponse.json({
+        success: true,
+        status: 'approved',
+      });
+    } else {
+      return NextResponse.json({
+        success: false,
+        status: verificationCheck.status,
+        error: 'Invalid code',
+      });
     }
-
-    return NextResponse.json({
-      success: true,
-      message: 'Phone verified successfully',
-    });
-
   } catch (error) {
-    console.error('Error verifying code:', error);
+    console.error('Twilio verify error:', error);
     return NextResponse.json(
-      { error: 'Verification failed' },
+      { error: 'Failed to verify code' },
       { status: 500 }
     );
   }
