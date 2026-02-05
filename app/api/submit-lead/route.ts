@@ -110,7 +110,7 @@ export async function POST(request: NextRequest) {
         email: body.email || '',
         phone: body.phone?.replace(/\D/g, '') || '',
         state: body.state || '',
-        zip: body.zipCode || '',
+        zip_code: body.zipCode || '',
         // Qualifying fields
         pregnancy: body.pregnancy || '',
         health_status: body.healthStatus || '',
